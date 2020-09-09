@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu-->
+        <scene sceneID="gMq-O5-fbc">
+            <objects>
+                <viewController storyboardIdentifier="SideMenu" title="Side Menu" modalPresentationStyle="fullScreen" id="R41-Mk-q8R" customClass="SideMenuTableViewController" customModule="Teer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YPF-Kd-ybf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask Group 4" translatesAutoresizingMaskIntoConstraints="NO" id="Csu-7e-rTt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 9846" translatesAutoresizingMaskIntoConstraints="NO" id="oaF-4m-UOf">
+                                <rect key="frame" x="135" y="28" width="105.5" height="113.5"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQb-lz-Scg">
+                                <rect key="frame" x="0.0" y="188" width="414" height="708"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SideCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideCell" rowHeight="41" id="RLm-PU-O9i" customClass="SideMenuTableViewCell" customModule="Teer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="41"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RLm-PU-O9i" id="o83-so-m4H">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ4-d7-fG2">
+                                                    <rect key="frame" x="68" y="9" width="249" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b20-Ud-0tr">
+                                                    <rect key="frame" x="15" y="8" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="6h3-ft-qle"/>
+                                                        <constraint firstAttribute="height" constant="25" id="k10-l4-nYb"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="b20-Ud-0tr" firstAttribute="top" secondItem="o83-so-m4H" secondAttribute="top" constant="8" id="LCW-K8-vnO"/>
+                                                <constraint firstItem="b20-Ud-0tr" firstAttribute="leading" secondItem="o83-so-m4H" secondAttribute="leading" constant="15" id="Y6Z-4O-o3v"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="cellImage" destination="b20-Ud-0tr" id="jhJ-Zg-pzP"/>
+                                            <outlet property="cellTitle" destination="lQ4-d7-fG2" id="SRW-TW-juR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Csu-7e-rTt" firstAttribute="top" secondItem="YPF-Kd-ybf" secondAttribute="top" id="0jr-d3-AVP"/>
+                            <constraint firstAttribute="bottom" secondItem="Csu-7e-rTt" secondAttribute="bottom" id="4Gv-hS-ioK"/>
+                            <constraint firstItem="oaF-4m-UOf" firstAttribute="top" secondItem="bYN-wk-inF" secondAttribute="top" constant="28" id="Bbc-ee-5U3"/>
+                            <constraint firstItem="oaF-4m-UOf" firstAttribute="centerX" secondItem="YPF-Kd-ybf" secondAttribute="centerX" id="J11-3U-h5q"/>
+                            <constraint firstItem="Csu-7e-rTt" firstAttribute="leading" secondItem="YPF-Kd-ybf" secondAttribute="leading" id="RTE-DO-5qJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Csu-7e-rTt" secondAttribute="trailing" id="apP-5X-WVG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bYN-wk-inF"/>
+                    </view>
+                    <connections>
+                        <outlet property="sideMenuTable" destination="IQb-lz-Scg" id="tAb-Oc-0it"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwA-xk-pRH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="-310.79460269865069"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Group 9846" width="105.5" height="113.5"/>
+        <image name="Mask Group 4" width="562.5" height="1218"/>
+    </resources>
+</document>

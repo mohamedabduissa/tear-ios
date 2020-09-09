@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="wHW-zN-fTR">
+            <objects>
+                <viewController storyboardIdentifier="loginScreen" modalPresentationStyle="fullScreen" id="83I-7v-ej6" customClass="LoginViewController" customModule="Teer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ma2-y1-kjf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="cvy-i0-1zW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <viewLayoutGuide key="safeArea" id="fbX-rJ-bvy"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, Log in " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyW-wp-CVw">
+                                <rect key="frame" x="30" y="350.66666666666669" width="354" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-5y-Qpc">
+                                <rect key="frame" x="30" y="314" width="354" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fnC-kT-TcT">
+                                <rect key="frame" x="30" y="383" width="354" height="130"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aah-Tl-ZXC" customClass="CustomTextField" customModule="Teer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="YvT-Tg-Hgi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ytj-Ak-GVa">
+                                        <rect key="frame" x="0.0" y="80" width="354" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="v4y-yS-GKj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbk-jW-OJA" customClass="CustomBtn" customModule="Teer" customModuleProvider="target">
+                                <rect key="frame" x="30" y="782" width="354" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="bTZ-w9-3On"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="onLoginTapped:" destination="83I-7v-ej6" eventType="touchUpInside" id="kCt-Je-bsD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="twv-iO-Lf5" firstAttribute="trailing" secondItem="EyW-wp-CVw" secondAttribute="trailing" constant="30" id="11E-if-08z"/>
+                            <constraint firstItem="ea7-5y-Qpc" firstAttribute="leading" secondItem="twv-iO-Lf5" secondAttribute="leading" constant="30" id="6ll-8c-BkE"/>
+                            <constraint firstItem="twv-iO-Lf5" firstAttribute="trailing" secondItem="ea7-5y-Qpc" secondAttribute="trailing" constant="30" id="8g4-Kn-sn3"/>
+                            <constraint firstItem="fnC-kT-TcT" firstAttribute="centerY" secondItem="ma2-y1-kjf" secondAttribute="centerY" id="AMg-DA-cX0"/>
+                            <constraint firstItem="cvy-i0-1zW" firstAttribute="top" secondItem="ma2-y1-kjf" secondAttribute="top" id="EOH-4G-Hjb"/>
+                            <constraint firstItem="EyW-wp-CVw" firstAttribute="leading" secondItem="twv-iO-Lf5" secondAttribute="leading" constant="30" id="JaT-zm-jBt"/>
+                            <constraint firstItem="Lbk-jW-OJA" firstAttribute="leading" secondItem="twv-iO-Lf5" secondAttribute="leading" constant="30" id="Njl-Jk-Ka8"/>
+                            <constraint firstItem="cvy-i0-1zW" firstAttribute="leading" secondItem="twv-iO-Lf5" secondAttribute="leading" id="Nq3-qG-mqU"/>
+                            <constraint firstItem="twv-iO-Lf5" firstAttribute="trailing" secondItem="fnC-kT-TcT" secondAttribute="trailing" constant="30" id="OPo-b3-LeD"/>
+                            <constraint firstItem="fnC-kT-TcT" firstAttribute="leading" secondItem="twv-iO-Lf5" secondAttribute="leading" constant="30" id="Qd9-QD-xzD"/>
+                            <constraint firstItem="twv-iO-Lf5" firstAttribute="bottom" secondItem="Lbk-jW-OJA" secondAttribute="bottom" constant="20" id="SSv-gr-WkZ"/>
+                            <constraint firstItem="ea7-5y-Qpc" firstAttribute="centerX" secondItem="ma2-y1-kjf" secondAttribute="centerX" id="iPF-IK-aDj"/>
+                            <constraint firstItem="fnC-kT-TcT" firstAttribute="top" secondItem="EyW-wp-CVw" secondAttribute="bottom" constant="12" id="jYH-9M-ef4"/>
+                            <constraint firstItem="twv-iO-Lf5" firstAttribute="trailing" secondItem="Lbk-jW-OJA" secondAttribute="trailing" constant="30" id="leV-0h-D2O"/>
+                            <constraint firstAttribute="bottom" secondItem="cvy-i0-1zW" secondAttribute="bottom" id="mE3-4z-Gfw"/>
+                            <constraint firstItem="Lbk-jW-OJA" firstAttribute="centerX" secondItem="ma2-y1-kjf" secondAttribute="centerX" id="oah-LS-27A"/>
+                            <constraint firstItem="cvy-i0-1zW" firstAttribute="trailing" secondItem="twv-iO-Lf5" secondAttribute="trailing" id="oh6-an-8NE"/>
+                            <constraint firstItem="EyW-wp-CVw" firstAttribute="top" secondItem="ea7-5y-Qpc" secondAttribute="bottom" constant="10.5" id="quR-5R-4kl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="twv-iO-Lf5"/>
+                    </view>
+                    <connections>
+                        <outlet property="login" destination="Lbk-jW-OJA" id="QBV-aD-Pz2"/>
+                        <outlet property="password" destination="Ytj-Ak-GVa" id="wr3-Wu-L74"/>
+                        <outlet property="phone" destination="aah-Tl-ZXC" id="UWj-YH-5qT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZN-ye-vgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="-186.65667166416793"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash.png" width="1500" height="3248"/>
+    </resources>
+</document>

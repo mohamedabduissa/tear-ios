@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Order Status"; ObjectID = "GqI-eg-jwv"; */
+"GqI-eg-jwv.text" = "حالة الطلب";
+
+/* Class = "UILabel"; text = "120"; ObjectID = "TJr-tE-eYw"; */
+"TJr-tE-eYw.text" = "120";
+
+/* Class = "UILabel"; text = "LE"; ObjectID = "asI-sq-YJW"; */
+"asI-sq-YJW.text" = "ر.س";
+
+/* Class = "UILabel"; text = "order status"; ObjectID = "bU9-Mz-64K"; */
+"bU9-Mz-64K.text" = "حالة الطلب";
+
+/* Class = "UILabel"; text = "Select Date"; ObjectID = "h3G-yZ-ZET"; */
+"h3G-yZ-ZET.text" = "أختر تاريخ";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "hhM-1k-vxx"; */
+"hhM-1k-vxx.text" = "name";
+
+/* Class = "UILabel"; text = "No orders in this day"; ObjectID = "i8o-y2-m4j"; */
+"i8o-y2-m4j.text" = "لا يوجد طلبات في هذا اليوم";
+
+/* Class = "UILabel"; text = "#123"; ObjectID = "slB-4A-QJf"; */
+"slB-4A-QJf.text" = "#123";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "zAu-cK-z4r"; */
+"zAu-cK-z4r.text" = "تاريخ";

@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  Teer
+
+  Created by Mohamed Tahoon on 6/18/20.
+  Copyright © 2020 FudexEBS. All rights reserved.
+*/
+"Start Journey" = "Start Journey";
+"order Deliverd" = "order Deliverd";
+"canceled" = "canceled";
+"Order had been canceled from customer" = "Order had been canceled from customer";
+" SAR" = " SAR";
+"retrieveing reason" = "retrieveing reason";
+//MARK:- Side Menu
+"Main" = "Main";
+"Orders History" = "Orders History";
+"Change Language" = "Change Language";
+"Change Password" = "Change Password";
+"Contact Us" = "Contact Us";
+"Logout" = "Logout";
+"Personal Data" = "Personal Data";
+"Terms Of Service" = "Terms Of Service";
+
+//Orders History
+"complete" = "complete";
+"processing" = "processing";
+"new" = "new";
+"cancel" = "cancel";
+" at " = " at ";
+
+"Message Body" = "Message Body";

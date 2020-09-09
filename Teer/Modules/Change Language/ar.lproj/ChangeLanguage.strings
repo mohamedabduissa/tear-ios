@@ -1,0 +1,14 @@
+
+/* Class = "UILabel"; text = "English"; ObjectID = "4GB-0g-U5h"; */
+"4GB-0g-U5h.text" = "الانجليزية";
+
+/* Class = "UILabel"; text = "Please choose the application language from the available options"; ObjectID = "IMh-u4-gOC"; */
+"IMh-u4-gOC.text" = "يرجى إختيار لغة التطبيق ما بين الخيارات المتاحة";
+
+/* Class = "UILabel"; text = "Arabic"; ObjectID = "Yvl-9L-R3X"; */
+"Yvl-9L-R3X.text" = "العربية";
+
+/* Class = "UILabel"; text = "Change Language"; ObjectID = "jC6-kz-sQ6"; */
+"jC6-kz-sQ6.text" = "تغيير اللغة";
+
+"Xf4-HD-7xd.normalTitle" = "حفظ";

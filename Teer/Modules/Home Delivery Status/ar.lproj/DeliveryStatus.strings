@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "L.E"; ObjectID = "2Ld-d7-FaJ"; */
+"2Ld-d7-FaJ.text" = "ر.س";
+
+/* Class = "UIButton"; normalTitle = "Notifications"; ObjectID = "3KA-L2-4zb"; */
+"3KA-L2-4zb.normalTitle" = "Notifications";
+
+/* Class = "UILabel"; text = "Under delivery"; ObjectID = "3Y1-rV-JJx"; */
+"3Y1-rV-JJx.text" = "طلب جديد";
+
+/* Class = "UILabel"; text = "..."; ObjectID = "C1r-A5-Phi"; */
+"C1r-A5-Phi.text" = "...";
+
+/* Class = "UILabel"; text = "145"; ObjectID = "GMJ-mR-aVF"; */
+"GMJ-mR-aVF.text" = "145";
+
+/* Class = "UILabel"; text = "Recent Orders"; ObjectID = "JSg-Y6-a7R"; */
+"JSg-Y6-a7R.text" = "الطلبات الحالية";
+
+/* Class = "UILabel"; text = "..."; ObjectID = "LMG-ng-lz9"; */
+"LMG-ng-lz9.text" = "...";
+
+/* Class = "UILabel"; text = "Completed"; ObjectID = "MYu-o2-emu"; */
+"MYu-o2-emu.text" = "تم تسليمه";
+
+/* Class = "UILabel"; text = "Cancel"; ObjectID = "TCv-Ba-HWJ"; */
+"TCv-Ba-HWJ.text" = "المسترجع";
+
+/* Class = "UILabel"; text = "..."; ObjectID = "TDZ-4h-mpr"; */
+"TDZ-4h-mpr.text" = "...";
+
+/* Class = "UILabel"; text = "..."; ObjectID = "VJB-GE-jGH"; */
+"VJB-GE-jGH.text" = "...";
+
+/* Class = "UILabel"; text = "#123"; ObjectID = "VJj-uA-Ozw"; */
+"VJj-uA-Ozw.text" = "#123";
+
+/* Class = "UILabel"; text = "Processing"; ObjectID = "bt9-qg-aZM"; */
+"bt9-qg-aZM.text" = "قيد التسليم";
+
+/* Class = "UIButton"; normalTitle = "Menu"; ObjectID = "dtT-Ky-7lj"; */
+"dtT-Ky-7lj.normalTitle" = "Menu";
+
+/* Class = "UILabel"; text = "New"; ObjectID = "vNe-yU-hSR"; */
+"vNe-yU-hSR.text" = "جديد";

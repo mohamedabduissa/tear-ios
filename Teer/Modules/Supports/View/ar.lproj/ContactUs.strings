@@ -1,0 +1,18 @@
+
+/* Class = "UITextView"; text = "Message Body!"; ObjectID = "FIp-Vy-CC7"; */
+"FIp-Vy-CC7.text" = "محتوى الرسالة";
+
+/* Class = "UILabel"; text = "Contact Us"; ObjectID = "HOC-PR-XXf"; */
+"HOC-PR-XXf.text" = "تواصل معنا";
+
+/* Class = "UITextField"; placeholder = "Message Title"; ObjectID = "Qxd-zf-PtN"; */
+"Qxd-zf-PtN.placeholder" = "عنوان الرسالة";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "Rhb-gy-llJ"; */
+"Rhb-gy-llJ.normalTitle" = "إرسال";
+
+/* Class = "UITextField"; placeholder = "Select Message Type"; ObjectID = "Vef-a2-qr5"; */
+"Vef-a2-qr5.placeholder" = "اختار نوع الرسالة";
+
+/* Class = "UILabel"; text = "Send us your suggestion or your complaint"; ObjectID = "she-c1-25q"; */
+"she-c1-25q.text" = "إرسل إلينا إقتراحك وشكوتك إن وجد";

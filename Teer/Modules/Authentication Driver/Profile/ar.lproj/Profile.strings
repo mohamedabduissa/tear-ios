@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "You can modify your data by entering the following data"; ObjectID = "1ZW-Bl-bjZ"; */
+"1ZW-Bl-bjZ.text" = "يمكنك تعديل بياناتك بإدخال البيانات التالية";
+
+/* Class = "UILabel"; text = "Personal Data"; ObjectID = "9sj-il-GTc"; */
+"9sj-il-GTc.text" = "البيانات الشخصية";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "BL2-P9-rI6"; */
+"BL2-P9-rI6.normalTitle" = "حفظ";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "FiK-Tn-21k"; */
+"FiK-Tn-21k.text" = "البريد الإلكتروني";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "Ma7-Re-FCx"; */
+"Ma7-Re-FCx.text" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ZRQ-pt-B6B"; */
+"ZRQ-pt-B6B.text" = "الإسم";

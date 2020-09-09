@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "Underway"; ObjectID = "0ke-4T-Emq"; */
+"0ke-4T-Emq.text" = "قيد التسليم";
+
+/* Class = "UILabel"; text = "120"; ObjectID = "1EC-W8-zdU"; */
+"1EC-W8-zdU.text" = "120";
+
+/* Class = "UILabel"; text = "Order Status"; ObjectID = "7XU-gX-zx0"; */
+"7XU-gX-zx0.text" = "حالة الطلب";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "FXP-gd-F9N"; */
+"FXP-gd-F9N.text" = "10";
+
+/* Class = "UILabel"; text = "Retrieves"; ObjectID = "IQ2-pR-4Kn"; */
+"IQ2-pR-4Kn.text" = "المسترجع";
+
+/* Class = "UILabel"; text = "Delivered"; ObjectID = "RcX-xA-35i"; */
+"RcX-xA-35i.text" = "تم تسليمه";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SNh-bC-d5u"; */
+"SNh-bC-d5u.text" = "Label";
+
+/* Class = "UILabel"; text = "Orders History"; ObjectID = "Zra-i2-OUf"; */
+"Zra-i2-OUf.text" = "سجل الطلبات";
+
+/* Class = "UILabel"; text = "#123"; ObjectID = "cMC-WS-pEw"; */
+"cMC-WS-pEw.text" = "#123";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "cUg-gS-VWY"; */
+"cUg-gS-VWY.text" = "10";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "nYk-EQ-xDv"; */
+"nYk-EQ-xDv.text" = "الكلي";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "toY-61-LsJ"; */
+"toY-61-LsJ.text" = "10";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "twT-DN-dmO"; */
+"twT-DN-dmO.text" = "Label";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "uMM-Z0-Zg9"; */
+"uMM-Z0-Zg9.text" = "Date";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "uNK-7D-Q8R"; */
+"uNK-7D-Q8R.text" = "10";
+
+/* Class = "UILabel"; text = "LE"; ObjectID = "ygB-4q-lu4"; */
+"ygB-4q-lu4.text" = "ر.س";

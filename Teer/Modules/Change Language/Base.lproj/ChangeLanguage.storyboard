@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Change Language View Controller-->
+        <scene sceneID="Dyk-5A-2e6">
+            <objects>
+                <viewController storyboardIdentifier="ChangeLanguageViewController" modalPresentationStyle="fullScreen" id="cyZ-2h-YX0" customClass="ChangeLanguageViewController" customModule="Teer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JAg-oE-LA0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYM-L7-Ruf">
+                                <rect key="frame" x="0.0" y="34" width="414" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 753" translatesAutoresizingMaskIntoConstraints="NO" id="DmW-nc-Sq3">
+                                        <rect key="frame" x="0.0" y="-37" width="414" height="122"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="122" id="6go-BB-D4I"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfV-bt-CPX">
+                                        <rect key="frame" x="18" y="21.5" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="X8G-89-uIV"/>
+                                            <constraint firstAttribute="width" constant="32" id="ePE-jA-PPS"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.99215686270000003" green="0.97647058819999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="pngwave"/>
+                                        <connections>
+                                            <action selector="backBtnDidTapped:" destination="cyZ-2h-YX0" eventType="touchUpInside" id="oQd-Y5-hIi"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-kz-sQ6">
+                                        <rect key="frame" x="125" y="26" width="164.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="jC6-kz-sQ6" firstAttribute="centerY" secondItem="DmW-nc-Sq3" secondAttribute="centerY" constant="13.5" id="1zy-c9-hnR"/>
+                                    <constraint firstItem="DmW-nc-Sq3" firstAttribute="top" secondItem="WYM-L7-Ruf" secondAttribute="top" constant="-37" id="F8b-80-EQP"/>
+                                    <constraint firstAttribute="trailing" secondItem="DmW-nc-Sq3" secondAttribute="trailing" id="FWD-Hj-JCS"/>
+                                    <constraint firstItem="AfV-bt-CPX" firstAttribute="leading" secondItem="WYM-L7-Ruf" secondAttribute="leading" constant="18" id="PZa-mX-3ek"/>
+                                    <constraint firstItem="DmW-nc-Sq3" firstAttribute="leading" secondItem="WYM-L7-Ruf" secondAttribute="leading" id="dOy-Md-kcz"/>
+                                    <constraint firstItem="AfV-bt-CPX" firstAttribute="centerY" secondItem="DmW-nc-Sq3" secondAttribute="centerY" constant="13.5" id="gvk-Xg-lx2"/>
+                                    <constraint firstItem="jC6-kz-sQ6" firstAttribute="centerX" secondItem="DmW-nc-Sq3" secondAttribute="centerX" id="qap-UR-raJ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose the application language from the available options" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMh-u4-gOC">
+                                <rect key="frame" x="20" y="124" width="374" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfZ-66-BOE">
+                                <rect key="frame" x="20" y="273" width="211" height="78"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8D-pc-PFe" customClass="RadioButton" customModule="MBRadioCheckboxButton">
+                                        <rect key="frame" x="20" y="22" width="22" height="34"/>
+                                        <connections>
+                                            <action selector="englishLanguageBtnDidTapped:" destination="cyZ-2h-YX0" eventType="touchUpInside" id="uku-QU-45r"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GB-0g-U5h">
+                                        <rect key="frame" x="122" y="27" width="63.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="en_flag" translatesAutoresizingMaskIntoConstraints="NO" id="6JP-bF-sN7">
+                                        <rect key="frame" x="72" y="19" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="29f-Hq-9do"/>
+                                            <constraint firstAttribute="height" constant="40" id="p9X-2X-Xfl"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="1Sp-Ks-cMv"/>
+                                    <constraint firstItem="C8D-pc-PFe" firstAttribute="top" secondItem="jfZ-66-BOE" secondAttribute="top" constant="22" id="2Hi-on-qZk"/>
+                                    <constraint firstItem="C8D-pc-PFe" firstAttribute="leading" secondItem="jfZ-66-BOE" secondAttribute="leading" constant="20" id="DAe-Uf-K4y"/>
+                                    <constraint firstItem="4GB-0g-U5h" firstAttribute="centerY" secondItem="6JP-bF-sN7" secondAttribute="centerY" id="H6O-UF-gjt"/>
+                                    <constraint firstItem="6JP-bF-sN7" firstAttribute="centerY" secondItem="C8D-pc-PFe" secondAttribute="centerY" id="LCY-aF-tga"/>
+                                    <constraint firstItem="4GB-0g-U5h" firstAttribute="top" secondItem="jfZ-66-BOE" secondAttribute="top" constant="27" id="Z5E-9H-2R0"/>
+                                    <constraint firstItem="4GB-0g-U5h" firstAttribute="leading" secondItem="6JP-bF-sN7" secondAttribute="trailing" constant="10" id="hWC-qV-Wi3"/>
+                                    <constraint firstItem="C8D-pc-PFe" firstAttribute="centerY" secondItem="jfZ-66-BOE" secondAttribute="centerY" id="mbC-2d-uvl"/>
+                                    <constraint firstItem="6JP-bF-sN7" firstAttribute="leading" secondItem="C8D-pc-PFe" secondAttribute="trailing" constant="30" id="yzT-AF-rtQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pc-1m-NWP">
+                                <rect key="frame" x="20" y="201" width="217" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ov-NH-ibK" customClass="RadioButton" customModule="MBRadioCheckboxButton">
+                                        <rect key="frame" x="20" y="20" width="22" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="wrx-bG-CHp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="indicatorSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="arbicLangaugeBtnDidTapped:" destination="cyZ-2h-YX0" eventType="touchUpInside" id="gaa-vq-yEJ"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ar_flag" translatesAutoresizingMaskIntoConstraints="NO" id="zOT-B0-gTQ">
+                                        <rect key="frame" x="72" y="20" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="13S-de-H4B"/>
+                                            <constraint firstAttribute="height" constant="40" id="8xN-i6-f2w"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-9L-R3X">
+                                        <rect key="frame" x="120" y="28" width="56" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="zOT-B0-gTQ" firstAttribute="centerY" secondItem="2Ov-NH-ibK" secondAttribute="centerY" id="D5H-pY-DKg"/>
+                                    <constraint firstAttribute="width" constant="217" id="J5b-kp-Sd0"/>
+                                    <constraint firstItem="zOT-B0-gTQ" firstAttribute="centerY" secondItem="Yvl-9L-R3X" secondAttribute="centerY" id="KnZ-C0-9z3"/>
+                                    <constraint firstItem="Yvl-9L-R3X" firstAttribute="leading" secondItem="zOT-B0-gTQ" secondAttribute="trailing" constant="8" id="TOg-m8-pY2"/>
+                                    <constraint firstItem="zOT-B0-gTQ" firstAttribute="top" secondItem="4Pc-1m-NWP" secondAttribute="top" constant="20" id="d9I-qr-J0c"/>
+                                    <constraint firstItem="zOT-B0-gTQ" firstAttribute="leading" secondItem="2Ov-NH-ibK" secondAttribute="trailing" constant="30" id="jKi-2J-xZB"/>
+                                    <constraint firstItem="2Ov-NH-ibK" firstAttribute="leading" secondItem="4Pc-1m-NWP" secondAttribute="leading" constant="20" id="zEn-aA-PuL"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf4-HD-7xd" customClass="CustomBtn" customModule="Teer" customModuleProvider="target">
+                                <rect key="frame" x="30" y="764" width="354" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="U6a-8y-4Rf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveBtnDidTapped:" destination="cyZ-2h-YX0" eventType="touchUpInside" id="jeL-cd-BXP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jfZ-66-BOE" firstAttribute="top" secondItem="4Pc-1m-NWP" secondAttribute="bottom" constant="30" id="0Rt-oj-LjL"/>
+                            <constraint firstItem="cjL-fP-oJi" firstAttribute="leading" secondItem="WYM-L7-Ruf" secondAttribute="leading" id="A4k-40-Lng"/>
+                            <constraint firstItem="IMh-u4-gOC" firstAttribute="leading" secondItem="cjL-fP-oJi" secondAttribute="leading" constant="20" id="LVD-rN-oS1"/>
+                            <constraint firstItem="Xf4-HD-7xd" firstAttribute="leading" secondItem="cjL-fP-oJi" secondAttribute="leading" constant="30" id="MbG-62-pcI"/>
+                            <constraint firstItem="4Pc-1m-NWP" firstAttribute="leading" secondItem="cjL-fP-oJi" secondAttribute="leading" constant="20" id="Onh-YY-rKQ"/>
+                            <constraint firstItem="IMh-u4-gOC" firstAttribute="trailing" secondItem="cjL-fP-oJi" secondAttribute="trailing" constant="-20" id="ahO-JG-DJb"/>
+                            <constraint firstItem="IMh-u4-gOC" firstAttribute="top" secondItem="JAg-oE-LA0" secondAttribute="top" constant="124" id="bqA-9E-GRz"/>
+                            <constraint firstItem="4Pc-1m-NWP" firstAttribute="top" secondItem="WYM-L7-Ruf" secondAttribute="bottom" constant="87" id="gWF-f1-ZKT"/>
+                            <constraint firstItem="WYM-L7-Ruf" firstAttribute="trailing" secondItem="cjL-fP-oJi" secondAttribute="trailing" id="hqD-oE-3nO"/>
+                            <constraint firstItem="IMh-u4-gOC" firstAttribute="top" secondItem="WYM-L7-Ruf" secondAttribute="bottom" constant="10" id="hsR-3S-wvx"/>
+                            <constraint firstItem="cjL-fP-oJi" firstAttribute="top" secondItem="WYM-L7-Ruf" secondAttribute="top" constant="10" id="i8O-Hf-cLC"/>
+                            <constraint firstItem="cjL-fP-oJi" firstAttribute="trailing" secondItem="Xf4-HD-7xd" secondAttribute="trailing" constant="30" id="nZY-0J-gj5"/>
+                            <constraint firstItem="4Pc-1m-NWP" firstAttribute="top" secondItem="IMh-u4-gOC" secondAttribute="bottom" constant="8" id="nwC-JZ-hC3"/>
+                            <constraint firstItem="jfZ-66-BOE" firstAttribute="leading" secondItem="cjL-fP-oJi" secondAttribute="leading" constant="20" id="ptW-9X-s9E"/>
+                            <constraint firstItem="cjL-fP-oJi" firstAttribute="bottom" secondItem="Xf4-HD-7xd" secondAttribute="bottom" constant="40" id="sgl-mP-u5h"/>
+                            <constraint firstItem="jfZ-66-BOE" firstAttribute="top" secondItem="IMh-u4-gOC" secondAttribute="bottom" constant="80" id="wMP-Ma-Due"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cjL-fP-oJi"/>
+                    </view>
+                    <connections>
+                        <outlet property="arabicLanguageRadioBtn" destination="2Ov-NH-ibK" id="SrB-Iz-Odm"/>
+                        <outlet property="backBtnImage" destination="AfV-bt-CPX" id="CZ9-ue-Wza"/>
+                        <outlet property="englishLanguageRadioBtn" destination="C8D-pc-PFe" id="5HC-A0-XQw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibP-vE-xsR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Rectangle 753" width="564" height="144"/>
+        <image name="ar_flag" width="19" height="14"/>
+        <image name="en_flag" width="19" height="12.5"/>
+        <image name="pngwave" width="896" height="892"/>
+    </resources>
+</document>

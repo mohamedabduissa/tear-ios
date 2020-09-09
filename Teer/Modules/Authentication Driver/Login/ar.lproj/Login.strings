@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Welcome back, Log in "; ObjectID = "EyW-wp-CVw"; */
+"EyW-wp-CVw.text" = "أهلا بك مرة أخرى,سجل دخولك ";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Lbk-jW-OJA"; */
+"Lbk-jW-OJA.normalTitle" = "تسجيل دخول";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Ytj-Ak-GVa"; */
+"Ytj-Ak-GVa.placeholder" = "كلمة المرور";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "aah-Tl-ZXC"; */
+"aah-Tl-ZXC.placeholder" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "ea7-5y-Qpc"; */
+"ea7-5y-Qpc.text" = "تسجيل دخول";

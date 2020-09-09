@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "Your request is being retrieved"; ObjectID = "0rK-tG-dJs"; */
+"0rK-tG-dJs.text" = "طلب قيد الاسترجاع";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2iS-eG-U6U"; */
+"2iS-eG-U6U.text" = "Label";
+
+/* Class = "UILabel"; text = "#123"; ObjectID = "ACZ-on-let"; */
+"ACZ-on-let.text" = "#123";
+
+/* Class = "UILabel"; text = "Your message was sent successfully"; ObjectID = "Anx-Qc-pHH"; */
+"Anx-Qc-pHH.text" = "تم ارسال رسالتك بنجاح";
+
+/* Class = "UILabel"; text = "30:30"; ObjectID = "DTH-q2-3gm"; */
+"DTH-q2-3gm.text" = "30:30";
+
+/* Class = "UIButton"; normalTitle = "Accept Order"; ObjectID = "ElN-2K-rzB"; */
+"ElN-2K-rzB.normalTitle" = "Accept Order";
+
+/* Class = "UILabel"; text = "    Order has been received"; ObjectID = "HSX-21-U1W"; */
+"HSX-21-U1W.text" = "    تم استلام الطلب";
+
+/* Class = "UILabel"; text = "New Order"; ObjectID = "MLi-nV-Gle"; */
+"MLi-nV-Gle.text" = "طلب جديد";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Mjb-A8-A4F"; */
+"Mjb-A8-A4F.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "cancel"; ObjectID = "Xzi-h9-hmb"; */
+"Xzi-h9-hmb.normalTitle" = "الغاء";
+
+/* Class = "UILabel"; text = "   Received"; ObjectID = "ZKJ-A9-idg"; */
+"ZKJ-A9-idg.text" = "   تم الاستلام";
+
+/* Class = "UILabel"; text = "    Order had been delivered to customer"; ObjectID = "abf-QX-bbO"; */
+"abf-QX-bbO.text" = "    جاري توصيل الطلب للعميل";
+
+/* Class = "UIButton"; normalTitle = "send"; ObjectID = "akj-Vc-m1n"; */
+"akj-Vc-m1n.normalTitle" = "إرسال";
+
+/* Class = "UILabel"; text = "145 L.E"; ObjectID = "bs3-PZ-COa"; */
+"bs3-PZ-COa.text" = "145 L.E";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eFT-a3-fSN"; */
+"eFT-a3-fSN.text" = "Label";
+
+/* Class = "UILabel"; text = "    Delivered"; ObjectID = "fGh-KO-gIa"; */
+"fGh-KO-gIa.text" = "    تم التسليم";
+
+/* Class = "UILabel"; text = "Delivery Time"; ObjectID = "iP3-lq-ZEa"; */
+"iP3-lq-ZEa.text" = "وقت التوصيل";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lKm-it-AGK"; */
+"lKm-it-AGK.text" = "Label";
+
+/* Class = "UILabel"; text = "    The order is being deliverd to the customer"; ObjectID = "p8v-KK-LT0"; */
+"p8v-KK-LT0.text" = "    جاري توصيل الطلب للعميل";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rda-RS-LH7"; */
+"rda-RS-LH7.text" = "Label";
+
+/* Class = "UILabel"; text = "   Start the journey"; ObjectID = "znd-h9-V4e"; */
+"znd-h9-V4e.text" = "   بدأ الرحلة";
