@@ -23,8 +23,15 @@ class ChangeLanguageViewController: UIViewController {
         arabicLanguageRadioBtn.radioCircle = RadioButtonCircleStyle.init(outerCircle: 20, innerCircle: 15, outerCircleBorder: 1)
         arabicLanguageRadioBtn.radioButtonColor = RadioButtonColor(active: hexStringToUIColor(hex: "#D2415B"), inactive: hexStringToUIColor(hex: "#D2415B"))
         englishLanguageRadioBtn.radioButtonColor = RadioButtonColor(active: hexStringToUIColor(hex: "#D2415B"), inactive: hexStringToUIColor(hex: "#D2415B"))
-        if  MOLHLanguage.isArabic(){
+        if MOLHLanguage.currentAppleLanguage() == "ar"{
+            
+            arabicLanguageRadioBtn.style = .circle
+            group3Container.selectedButton = arabicLanguageRadioBtn
             self.backBtnImage.transform = self.backBtnImage.transform.rotated(by: CGFloat(Double.pi))
+        }
+        else if MOLHLanguage.currentAppleLanguage() == "en"{
+            englishLanguageRadioBtn.style = .circle
+            group3Container.selectedButton = englishLanguageRadioBtn
         }
         
     }
@@ -34,6 +41,7 @@ class ChangeLanguageViewController: UIViewController {
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
         MOLH.reset(transition: .transitionCrossDissolve, duration: 0.25)
         MOLH.reset()
+        print("hamada")
         
     }
     @IBAction func arbicLangaugeBtnDidTapped(_ sender: Any) {

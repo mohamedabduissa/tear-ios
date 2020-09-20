@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,7 +89,7 @@
                                     <constraint firstAttribute="width" constant="120" id="W05-dr-oeg"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-gd-F9N">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-gd-F9N">
                                 <rect key="frame" x="4" y="190" width="120" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="6cN-Oz-Gnz"/>
@@ -114,7 +114,7 @@
                                     <constraint firstAttribute="width" constant="120" id="tt3-zx-mde"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-gS-VWY">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-gS-VWY">
                                 <rect key="frame" x="201" y="190" width="120" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="yZG-oz-jgc"/>
@@ -139,7 +139,7 @@
                                     <constraint firstAttribute="width" constant="120" id="pd3-UP-iSo"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toY-61-LsJ">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toY-61-LsJ">
                                 <rect key="frame" x="298" y="190" width="120" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="cg4-BW-JKH"/>
@@ -164,7 +164,7 @@
                                     <constraint firstAttribute="width" constant="120" id="s3a-D2-ZI1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNK-7D-Q8R">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNK-7D-Q8R">
                                 <rect key="frame" x="105" y="190" width="120" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="huD-mG-bJr"/>
@@ -245,7 +245,7 @@
                                                         <fragment content="address">
                                                             <attributes>
                                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
+                                                                <font key="NSFont" metaFont="label" size="18"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 <integer key="NSUnderline" value="1"/>
                                                             </attributes>
@@ -386,7 +386,8 @@
                         <outlet property="ordersHistoryCollectionview" destination="5qs-E4-6dT" id="zxG-vj-exc"/>
                         <outlet property="ordersHistorySelectDate" destination="icb-fI-pmZ" id="F50-cy-TfH"/>
                         <outlet property="processing" destination="FXP-gd-F9N" id="6nf-WO-dMD"/>
-                        <outlet property="totalOrdersHistory" destination="toY-61-LsJ" id="1Cd-Bu-gzG"/>
+                        <outlet property="totalOrdersHistory" destination="toY-61-LsJ" id="y6R-Xg-L9u"/>
+                        <outlet property="total_img" destination="y4V-bL-xxv" id="TuN-4U-xd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnu-7Y-lJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

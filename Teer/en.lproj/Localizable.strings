@@ -29,3 +29,20 @@
 " at " = " at ";
 
 "Message Body" = "Message Body";
+"forget_password" = "forget password?";
+"ok" = "OK";
+"select_language" = "please select language";
+"enter_phone" = "please enter phone number";
+"enter_password" = "please enter password";
+"phone_or_password_wrong" = "phone or password incorrect";
+"next" = "Next";
+"phone" = "phone number";
+"something_wrong" = "some thing wrong happened";
+"enter_code" = "Enter the code that was sent to your phone";
+"verification_code" = "Verification code";
+"new_password" = "new password";
+"re_enter_password" = "re_enter password";
+"save" = "save";
+"enter_verifiction" = "enter verification code";
+"passsord_reset_successfully" = "passsord reset successfully";
+"password_dismatch" = "password dose not match";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -65,19 +65,19 @@
                                 <rect key="frame" x="20" y="273" width="211" height="78"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8D-pc-PFe" customClass="RadioButton" customModule="MBRadioCheckboxButton">
-                                        <rect key="frame" x="20" y="22" width="22" height="34"/>
+                                        <rect key="frame" x="20" y="22" width="30" height="34"/>
                                         <connections>
                                             <action selector="englishLanguageBtnDidTapped:" destination="cyZ-2h-YX0" eventType="touchUpInside" id="uku-QU-45r"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GB-0g-U5h">
-                                        <rect key="frame" x="122" y="27" width="63.5" height="24"/>
+                                        <rect key="frame" x="130" y="27" width="63.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="en_flag" translatesAutoresizingMaskIntoConstraints="NO" id="6JP-bF-sN7">
-                                        <rect key="frame" x="72" y="19" width="40" height="40"/>
+                                        <rect key="frame" x="80" y="19" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="29f-Hq-9do"/>
                                             <constraint firstAttribute="height" constant="40" id="p9X-2X-Xfl"/>
@@ -101,7 +101,7 @@
                                 <rect key="frame" x="20" y="201" width="217" height="42"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ov-NH-ibK" customClass="RadioButton" customModule="MBRadioCheckboxButton">
-                                        <rect key="frame" x="20" y="20" width="22" height="40"/>
+                                        <rect key="frame" x="20" y="20" width="30" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="wrx-bG-CHp"/>
                                         </constraints>
@@ -121,14 +121,14 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ar_flag" translatesAutoresizingMaskIntoConstraints="NO" id="zOT-B0-gTQ">
-                                        <rect key="frame" x="72" y="20" width="40" height="40"/>
+                                        <rect key="frame" x="80" y="20" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="13S-de-H4B"/>
                                             <constraint firstAttribute="height" constant="40" id="8xN-i6-f2w"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-9L-R3X">
-                                        <rect key="frame" x="120" y="28" width="56" height="24"/>
+                                        <rect key="frame" x="128" y="28" width="56" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

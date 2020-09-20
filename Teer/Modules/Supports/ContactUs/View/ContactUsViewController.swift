@@ -25,11 +25,13 @@ class ContactUsViewController: UIViewController, ContactUsVCProtocol {
     @IBOutlet weak var backBtnImage: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageBody.delegate = self
         messageTitle.roundAndShodowTextField()
         messageDropDown.roundAndShodowTextField()
         messageBody.layer.cornerRadius = 20
         messageBody.layer.borderWidth = 1.0
         messageBody.layer.borderColor = #colorLiteral(red: 0.7954400182, green: 0.7955744863, blue: 0.7954223156, alpha: 1)
+        messageBody.textColor = .lightGray
         messageBody.text = "Message Body".localize
         // The list of array to display. Can be changed dynamically
         messageDropDown.optionArray = ["Complaint", "Suggestion", "Order", "Other"]
@@ -76,4 +78,26 @@ class ContactUsViewController: UIViewController, ContactUsVCProtocol {
         func showAlert(msg: String) {
             toastMessage.createToastMessage(msg)
         }
+}
+    extension ContactUsViewController: UITextViewDelegate{
+        func textViewDidBeginEditing(_ textView: UITextView)
+        {
+            if (textView.text == "Message Body".localize && textView.textColor == .lightGray)
+            {
+                textView.text = ""
+                textView.textColor = .black
+            }
+            textView.becomeFirstResponder() //Optional
+        }
+
+        func textViewDidEndEditing(_ textView: UITextView)
+        {
+            if (textView.text == "")
+            {
+                textView.text = "Message Body".localize
+                textView.textColor = .lightGray
+            }
+            textView.resignFirstResponder()
+        }
+    
 }

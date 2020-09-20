@@ -111,7 +111,7 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
         receviedTimeLabel.text = order.receivedAtTime
         orderDeliverdTimeLabel.text = order.finishedAtTime
         startJourneyTimeLabel.text = order.startedAtTime
-        deliveryTimeLabel.text = order.time
+        deliveryTimeLabel.text = order.startedAtTime
         clientAddressLabel.text = order.address
         clientNameLabel.text = order.name
         orderPriceLabel.text = order.price + " SAR".localize
@@ -122,8 +122,9 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
         
     }
     @IBAction func backBtnDidTapped(_ sender: Any) {
-        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
-               self.present(view, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+//        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
+//               self.present(view, animated: true, completion: nil)
     }
     
     @IBAction func informationBtnDidTapped(_ sender: Any) {
@@ -147,6 +148,7 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
             startJourneyGrayView.isHidden = true
             orderReceviedGrayView.isHidden = true
             orderReceviedGreenMarkImageView.isHidden = false
+            informationButton.isEnabled = false
         case "complete":
        
             orderDeliverdGreenMarkImageView.isHidden = false
@@ -158,6 +160,8 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
             orderDeliverdGreenMarkImageView.isHidden = false
             orderReceviedGreenMarkImageView.isHidden = false
             startJourneyGreenMarkImageView.isHidden = false
+            informationButton.isEnabled = false
+
         case "cancel":
             deliveredOrderTitelLabel.text = "canceled".localize
             deliveredOrderDescription.text = "Order had been canceled from customer".localize
@@ -165,6 +169,8 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
             orderDeliverdGreenMarkImageView.isHidden = false
             orderReceviedGreenMarkImageView.isHidden = false
             startJourneyGreenMarkImageView.isHidden = false
+            informationButton.isEnabled = false
+
         default:break
         }
     }
@@ -172,11 +178,15 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
         switch status {
         case "new":
             changeOrderStatusPresenter.changeOrderStatus(status: "processing", caneclReson: "")
-            informationButton.isEnabled = true
+            informationButton.isEnabled = false
         case "processing":
-            
+            informationButton.isEnabled = false
+
             changeOrderStatusPresenter.changeOrderStatus(status: "complete", caneclReson: "")
-        default:break
+       
+
+        default:
+            break
         }
 
       //  changeStatusDetails(status: status!)

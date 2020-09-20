@@ -24,9 +24,9 @@ class LoginPresenter {
     
     func loginWithPhone(phone: String, password: String) {
         self.loginModel.login(phone: phone, password: password, closure: {(user) in
-            print("user data ....",user)
             if user != nil {
                 if (user?.email) != "" {
+                    print("ssssssss")
                     CodeHelper.saveCurrentUserId(userID: (user?.key)!)
                     CodeHelper.saveCurrentUserToken(userToken: (user?.apiToken)!)
                     CodeHelper.saveCurrentUserName(userName: (user?.name)!)
@@ -34,16 +34,17 @@ class LoginPresenter {
                     CodeHelper.saveCurrentUserPhone(userPhone: (user?.phone)!)
                     print(CodeHelper.getCurrentUserId())
                     //TODO: go to the home page transfereing the user object with you
+                    Indicator.sharedInstance.hideIndicator()
                     self.loginVCDelegate?.goToHomeScreen()
                     
                 }
                 else{
-                self.loginVCDelegate?.showAlert(msg: "Something went wrong")
+                self.loginVCDelegate?.showAlert(msg: "phone_or_password_wrong".localize)
                 }
             } else {
                 print("error happened!")
                 
-                self.loginVCDelegate?.showAlert(msg: "Something went wrong")
+                self.loginVCDelegate?.showAlert(msg: "phone_or_password_wrong".localize)
             }
         })
     }

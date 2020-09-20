@@ -14,11 +14,12 @@ class NewOrderDetailsModel {
     
     let newOrderDetailsURL = URL(string: CodeHelper.APIBaseUrl+"driver/order/\(CurrentOrdersResponse.getOrderNumber())/details")!
     
+    
     func getNewOrderDetails(completion: @escaping (String?, _ order:NewOrderDetailsResponse?) -> Void) {
         let headers : HTTPHeaders = ["Content-Type": "application/json",
                                      "Accept": "application/json",
                                      "Authorization": "Bearer "+CodeHelper.getCurrentUserToken()]
-        print("dddd",CodeHelper.getCurrentUserToken())
+        print("dddd\(newOrderDetailsURL)")
         AF.request(newOrderDetailsURL, method: .get, parameters: nil, encoding : JSONEncoding.default, headers: headers).responseJSON { (response) in
             print("url \(self.newOrderDetailsURL)")
             if response.response?.statusCode == 200{

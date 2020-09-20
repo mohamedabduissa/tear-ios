@@ -39,6 +39,7 @@ class DeliveryStatusModel {
                 let order = DeliveryStatusResponse(new: new, cancel: cancel, complete: complete, processing: processing)
                 
                     completion(nil,order)
+                    print("hadada")
                 print(order)
             }
             

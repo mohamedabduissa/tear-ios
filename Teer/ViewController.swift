@@ -16,10 +16,25 @@ class ViewController: UIViewController {
 
            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {timer in
                if CodeHelper.getCurrentUserId() == 0 { //login
-                   let storyBoard : UIStoryboard = UIStoryboard(name: "Login", bundle:nil)
-                   let nextViewController = storyBoard.instantiateViewController(withIdentifier: "loginScreen") as! UIViewController
+//                   let storyBoard : UIStoryboard = UIStoryboard(name: "DeliveryStatus", bundle:nil)
+//                   let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! UIViewController
+//                self.present(nextViewController, animated: true, completion: nil)
+
                 //nextViewController.modalTransitionStyle = .flipHorizontal
-                   self.present(nextViewController, animated:true, completion:nil)
+//                let storyBoard : UIStoryboard = UIStoryboard(name: "forgetPassword", bundle:nil)
+//                
+//                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "forgetpassword") as! UIViewController
+//                
+//                nextViewController.modalPresentationStyle = .fullScreen
+//                //self.resetRoot()
+//                self.present(nextViewController, animated:true, completion:nil)
+                
+//                     r
+                let myViewController = LanguageController(nibName: "ChooseLanguage", bundle: nil)
+                myViewController.modalPresentationStyle =  .fullScreen
+                self.present(myViewController, animated: true, completion: nil)
+////                  self.present(myViewController, animated: true, completion: nil)
+               
                }
                else {
                    let storyBoard : UIStoryboard = UIStoryboard(name: "DeliveryStatus", bundle:nil)

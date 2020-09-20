@@ -19,7 +19,7 @@ class OrdersCell: UITableViewCell ,CurrentOrdersCellProtocol{
     }
     
     func displayOrderNumber(number: Int) {
-        orderNumber.text = String(number)
+        orderNumber.text = "#" + String(number)
     }
     
     

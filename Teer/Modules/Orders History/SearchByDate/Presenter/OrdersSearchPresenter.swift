@@ -48,9 +48,11 @@ class OrdersSearchPresenter {
           let currentOrder : OrdersData
           currentOrder = ordersSearchList[index]
         cell.orderNumber.text = "#" + "\(String(describing: currentOrder.key!))"
+//        cell.orderNumber.text = "#" + "123"
         cell.name.text = currentOrder.clientName
         cell.address.text = currentOrder.address
         cell.orderCost.text = currentOrder.price
+        cell.orderCost.text?.append(contentsOf: " SAR".localize)
         cell.orderStatus.text = "\(String(describing: currentOrder.status!))".localize + " at ".localize + "\(String(describing: currentOrder.deliverDate!))"
         
       }

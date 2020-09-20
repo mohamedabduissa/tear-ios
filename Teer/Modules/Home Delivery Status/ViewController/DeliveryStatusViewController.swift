@@ -19,9 +19,14 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
     @IBOutlet weak var orderHistoryBackBtn: UIButton!
     @IBOutlet weak var ordersHistorySelectDate: UIButton!
     @IBOutlet weak var orderHistoryDate: UILabel!
-    @IBOutlet weak var totalOrdersHistory: UILabel?
+    
+    @IBOutlet weak var totalOrdersHistory: UILabel!
+    
+    @IBOutlet weak var total_img: UIImageView?
+    
+    
     @IBOutlet weak var new: UILabel?
-    @IBOutlet weak var processing: UILabel?
+    @IBOutlet weak var processing: UILabel!
     @IBOutlet weak var complete: UILabel!
     @IBOutlet weak var cancel: UILabel!
     
@@ -34,12 +39,15 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
     let presenter = DeliveryStatusPresenter(deliveryModel: DeliveryStatusModel())
     let currentOrdersPresenter = CurrentOrdersPresenter(currnetOrdersModel: CurrentOrdersModel())
     let ordersHistoryPresenter = OrdersHistoryPresenter(ordersHistoryModel: OrdersHistoryModel())
+    var histor: OrdersHistoryPresenter?
     let toastMessage = ToastMessages()
-    
+    var tapGestureRecognizer: UITapGestureRecognizer!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK:- Date for Orders History
-        
+        print("xxxxxx")
+//        ordersHistoryPresenter.getAllOrdersHistory()
         currentOrdersTableView?.rowHeight = 120
         if restorationIdentifier == "2"{
         ordersHistoryCollectionview?.delegate = self
@@ -49,8 +57,9 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
             }
             
         }
-        
+   set_tap_gesture()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         presenter.setVCDelegate(vcDelegate: self)
         currentOrdersPresenter.setVCDelegate(vcDelegate: self)        
@@ -59,14 +68,55 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
         if restorationIdentifier == "2"{
             formatter.dateFormat = "dd-MM-yyyy"
             let result = formatter.string(from: date)
+            print("res\(result)")
             orderHistoryDate.text = result
         ordersHistoryPresenter.setVCDelegate(vcDelegate: self)
         ordersHistoryPresenter.getAllOrdersHistory()
         ordersHistoryCollectionview?.reloadData()
+           
+
         }
+       
+    }
+    func set_tap_gesture()
+    {
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.cancel_order))
+            cancel.addGestureRecognizer(tapGestureRecognizer)
+        
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.complete_order))
+        complete.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.total_order))
+        totalOrdersHistory?.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.processing_order))
+        processing.addGestureRecognizer(tapGestureRecognizer)
+
         
     }
     
+    
+    @objc func cancel_order() {
+        
+        ordersHistoryPresenter.type = "cancel"
+        ordersHistoryCollectionview.reloadData()
+        
+        
+    }
+    
+    @objc func processing_order() {
+        ordersHistoryPresenter.type = "processing"
+        ordersHistoryCollectionview.reloadData()
+        
+    }
+    @objc func complete_order() {
+        ordersHistoryPresenter.type = "complete"
+        ordersHistoryCollectionview.reloadData()
+        
+    }
+    @objc func total_order() {
+       ordersHistoryCollectionview.reloadData()
+
+        
+    }
     func displayOrderData(_ order: (new: Int, complete: Int, processing: Int, cancel: Int)) {
         new?.text = "\(order.new)"
         cancel.text = "\(order.complete)"
@@ -118,11 +168,13 @@ extension DeliveryStatusViewController : UITableViewDelegate,UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! OrdersCell?
-               let value = cell?.orderNumber.text
-               NewOrderDetailsResponse.orderNum = value!
-               CurrentOrdersResponse.save(value!)
-               print(CurrentOrdersResponse.getOrderNumber())
+//        let cell = tableView.cellForRow(at: indexPath) as! OrdersCell?
+//               let value = cell?.orderNumber.text
+//               NewOrderDetailsResponse.orderNum = value!
+        let value = currentOrdersPresenter.request_number(for: indexPath.row)
+        print("currnetOrder\(value)")
+        CurrentOrdersResponse.save(value)
+
         let view = UIStoryboard(name: "NewOrderDetails", bundle: nil).instantiateViewController(withIdentifier: "NewOrderDetailsViewController") as! NewOrderDetailsViewController
         
         DispatchQueue.main.asyncAfter(deadline: .now()+0.3) {
@@ -134,6 +186,7 @@ extension DeliveryStatusViewController : UITableViewDelegate,UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentOrdersPresenter.getCurrentOrdersCount()
+//        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -160,15 +213,25 @@ extension DeliveryStatusViewController: UICollectionViewDataSource, UICollection
         return ordersHistoryPresenter.getAllOrdersHistoryCount()
     }
     
-    
+   
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrdersHistoryCell", for: indexPath) as! OrdersHistoryCollectionViewCell
         ordersHistoryPresenter.configure(cell: cell, for: indexPath.row)
-        
+//        print("cell\(cell.orderNumber.text)")
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrdersHistoryCell", for: indexPath) as! OrdersHistoryCollectionViewCell
+        
+        let value = ordersHistoryPresenter.return_number(cell: cell, for: indexPath.row)
+        CurrentOrdersResponse.save("\(value)")
+        print("collectionCell\(value)")
+        let view = UIStoryboard(name: "NewOrderDetails", bundle: nil).instantiateViewController(withIdentifier: "NewOrderDetailsViewController") as! NewOrderDetailsViewController
+        self.present(view, animated: true, completion: nil)
+
+    }
     
     // open news article url
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

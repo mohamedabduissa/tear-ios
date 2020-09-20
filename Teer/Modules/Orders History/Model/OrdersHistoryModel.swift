@@ -131,6 +131,7 @@ class OrdersHistoryModel{
             
             if response.response?.statusCode == 200{
                 print(response)
+                print("success")
             }
             switch response.result{
             case .failure:
@@ -154,7 +155,7 @@ class OrdersHistoryModel{
                     //ordersHistory.append(currentOrder)
                     
                 }
-                
+                print("oder history\(ordersHistory)")
                 completion(nil,ordersHistory)
                 //   print(currentOrdersList[0].key)
             }

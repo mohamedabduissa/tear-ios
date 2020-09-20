@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -74,6 +74,18 @@
 		52FD88D92480FDF200ACB8EC /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD88D82480FDF200ACB8EC /* SideMenuTableViewController.swift */; };
 		52FD88DB2480FE3300ACB8EC /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD88DA2480FE3300ACB8EC /* SideMenuTableViewCell.swift */; };
 		791C801207B917A34E7DC2C0 /* Pods_Teer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F86833853D88FF306052CBC /* Pods_Teer.framework */; };
+		856D229525138D5D00B0AE08 /* new_password_presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D229425138D5D00B0AE08 /* new_password_presenter.swift */; };
+		8574363B250E932100200DD6 /* forgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8574363A250E932100200DD6 /* forgetPassword.storyboard */; };
+		8574363D250E935B00200DD6 /* forgetpassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8574363C250E935B00200DD6 /* forgetpassword.swift */; };
+		8574363F250E9CD700200DD6 /* forget_password_presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8574363E250E9CD700200DD6 /* forget_password_presenter.swift */; };
+		85743641250E9D6000200DD6 /* forget_password_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85743640250E9D6000200DD6 /* forget_password_model.swift */; };
+		85743643250E9FA000200DD6 /* vifiry_code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85743642250E9FA000200DD6 /* vifiry_code.swift */; };
+		85743645250EAE6A00200DD6 /* indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85743644250EAE6A00200DD6 /* indicator.swift */; };
+		85A7F5DC25136FA2004C78E3 /* verifiy_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F5DB25136FA2004C78E3 /* verifiy_password.swift */; };
+		85A7F5DE25136FB6004C78E3 /* new_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F5DD25136FB6004C78E3 /* new_password.swift */; };
+		85BDB0F0250A3AE10051E1A6 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BDB0EE250A3ADE0051E1A6 /* AlertController.swift */; };
+		85BDB0F1250A3AE10051E1A6 /* alertExention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BDB0EF250A3AE10051E1A6 /* alertExention.swift */; };
+		85BDB0F3250A3B060051E1A6 /* ShowAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BDB0F2250A3B060051E1A6 /* ShowAlertView.swift */; };
 		A81B2C022493CF16000E09ED /* ChangeOrderStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81B2C012493CF16000E09ED /* ChangeOrderStatusResponse.swift */; };
 		A8445FDF249A557000E0ACC2 /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8445FE1249A557000E0ACC2 /* TermsAndConditions.storyboard */; };
 		A8445FE4249A55C400E0ACC2 /* DeliveryStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8445FE6249A55C400E0ACC2 /* DeliveryStatus.storyboard */; };
@@ -180,6 +192,18 @@
 		52F52AEA249F3FD8003A2DFB /* SelectDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateVC.swift; sourceTree = "<group>"; };
 		52FD88D82480FDF200ACB8EC /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		52FD88DA2480FE3300ACB8EC /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		856D229425138D5D00B0AE08 /* new_password_presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new_password_presenter.swift; sourceTree = "<group>"; };
+		8574363A250E932100200DD6 /* forgetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = forgetPassword.storyboard; sourceTree = "<group>"; };
+		8574363C250E935B00200DD6 /* forgetpassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetpassword.swift; sourceTree = "<group>"; };
+		8574363E250E9CD700200DD6 /* forget_password_presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forget_password_presenter.swift; sourceTree = "<group>"; };
+		85743640250E9D6000200DD6 /* forget_password_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forget_password_model.swift; sourceTree = "<group>"; };
+		85743642250E9FA000200DD6 /* vifiry_code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vifiry_code.swift; sourceTree = "<group>"; };
+		85743644250EAE6A00200DD6 /* indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = indicator.swift; sourceTree = "<group>"; };
+		85A7F5DB25136FA2004C78E3 /* verifiy_password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifiy_password.swift; sourceTree = "<group>"; };
+		85A7F5DD25136FB6004C78E3 /* new_password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new_password.swift; sourceTree = "<group>"; };
+		85BDB0EE250A3ADE0051E1A6 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		85BDB0EF250A3AE10051E1A6 /* alertExention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alertExention.swift; sourceTree = "<group>"; };
+		85BDB0F2250A3B060051E1A6 /* ShowAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlertView.swift; sourceTree = "<group>"; };
 		A81B2C012493CF16000E09ED /* ChangeOrderStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOrderStatusResponse.swift; sourceTree = "<group>"; };
 		A8445FDE249A54FA00E0ACC2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A8445FE2249A557900E0ACC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -277,6 +301,9 @@
 		356C237124796A1B007C23F5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				85BDB0F2250A3B060051E1A6 /* ShowAlertView.swift */,
+				85BDB0EE250A3ADE0051E1A6 /* AlertController.swift */,
+				85BDB0EF250A3AE10051E1A6 /* alertExention.swift */,
 				356C236F247964FC007C23F5 /* RoundTextFieldExtension.swift */,
 				52DAF01A247DDDB400413897 /* CustomButton.swift */,
 				A8EB286C24905DCE001EBFB7 /* RoundView.swift */,
@@ -596,6 +623,7 @@
 				5226EF70247CF43000120720 /* ToastMessages.swift */,
 				5248748D249B4B9E004BB5C0 /* Reachability.swift */,
 				5211DCF8249F772100A881E9 /* HandelShowKeyboard.swift */,
+				85743644250EAE6A00200DD6 /* indicator.swift */,
 			);
 			path = CodeHelper;
 			sourceTree = "<group>";
@@ -603,6 +631,7 @@
 		5289BEEB2478E9CD00CC5D08 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				85743636250E92C000200DD6 /* forgetPassword */,
 				5235BBDF2498944600200BC6 /* Orders History */,
 				A8F60FCB24990811003BEEC9 /* Terms And Conditions */,
 				52A132EB2495D935002E9DC6 /* Supports */,
@@ -698,6 +727,45 @@
 				5241003D2490057600FD2DDD /* Logout */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		85743636250E92C000200DD6 /* forgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				85743639250E930600200DD6 /* presenter */,
+				85743638250E92E500200DD6 /* model */,
+				85743637250E92DD00200DD6 /* view */,
+			);
+			path = forgetPassword;
+			sourceTree = "<group>";
+		};
+		85743637250E92DD00200DD6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8574363A250E932100200DD6 /* forgetPassword.storyboard */,
+				8574363C250E935B00200DD6 /* forgetpassword.swift */,
+				85A7F5DB25136FA2004C78E3 /* verifiy_password.swift */,
+				85A7F5DD25136FB6004C78E3 /* new_password.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		85743638250E92E500200DD6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				85743640250E9D6000200DD6 /* forget_password_model.swift */,
+				85743642250E9FA000200DD6 /* vifiry_code.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		85743639250E930600200DD6 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8574363E250E9CD700200DD6 /* forget_password_presenter.swift */,
+				856D229425138D5D00B0AE08 /* new_password_presenter.swift */,
+			);
+			path = presenter;
 			sourceTree = "<group>";
 		};
 		9B70C266DBDBBE3EE4AC8A1B /* Frameworks */ = {
@@ -824,6 +892,7 @@
 				52477045247620CC00B8991E /* Sources */,
 				52477046247620CC00B8991E /* Frameworks */,
 				52477047247620CC00B8991E /* Resources */,
+				729E4169C7BE345023ADE9CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -893,6 +962,7 @@
 				5289BEFA2479074200CC5D08 /* ChooseLanguage.xib in Resources */,
 				A867334D249EB4BD008769D0 /* Profile.storyboard in Resources */,
 				A844600C249A5A0200E0ACC2 /* Notifications.storyboard in Resources */,
+				8574363B250E932100200DD6 /* forgetPassword.storyboard in Resources */,
 				52F52AE1249F0C95003A2DFB /* OrdersHistory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,6 +970,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		729E4169C7BE345023ADE9CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Teer/Pods-Teer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Teer/Pods-Teer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Teer/Pods-Teer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F27705047E7C04C1B6478089 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -934,9 +1021,11 @@
 				524D2692247E27B600D4544D /* ArbFONTS-22876-gen01.ttf in Sources */,
 				5248748E249B4B9E004BB5C0 /* Reachability.swift in Sources */,
 				524D268F247E259800D4544D /* ArbFONTS-Cairo-Regular-1.ttf in Sources */,
+				85743643250E9FA000200DD6 /* vifiry_code.swift in Sources */,
 				52470509249C81B500F97C9B /* OrdersHistoryPresenter.swift in Sources */,
 				52024C52249A6C0400C8A26D /* OrdersHistoeyCollectionViewCell.swift in Sources */,
 				5211DCF9249F772100A881E9 /* HandelShowKeyboard.swift in Sources */,
+				856D229525138D5D00B0AE08 /* new_password_presenter.swift in Sources */,
 				A8F60FD5249910FE003BEEC9 /* TermsAndConditionsModel.swift in Sources */,
 				524D2694247E3A8700D4544D /* OrdersCell.swift in Sources */,
 				52FD88DB2480FE3300ACB8EC /* SideMenuTableViewCell.swift in Sources */,
@@ -954,6 +1043,7 @@
 				520C59202499AAED00737462 /* ContactUsPresenter.swift in Sources */,
 				52DAF01B247DDDB400413897 /* CustomButton.swift in Sources */,
 				5289BEF12478ECBA00CC5D08 /* LoginPresenter.swift in Sources */,
+				85BDB0F3250A3B060051E1A6 /* ShowAlertView.swift in Sources */,
 				52410052249062DA00FD2DDD /* NotificationsTableVC.swift in Sources */,
 				5289BEF32478ED5600CC5D08 /* LoginModel.swift in Sources */,
 				523860E3248299CF0068363F /* ChangePassModel.swift in Sources */,
@@ -966,13 +1056,17 @@
 				A856B8AA248A603400F971BE /* NewOrderDetailsViewController.swift in Sources */,
 				35072AAC247BE5E9007EFADC /* DeliveryStatusResponse.swift in Sources */,
 				5211DCF2249F5C0400A881E9 /* OrdersSearchPresenter.swift in Sources */,
+				85743645250EAE6A00200DD6 /* indicator.swift in Sources */,
 				5231EB112497216200034005 /* PushNotification.swift in Sources */,
 				52F52AEB249F3FD8003A2DFB /* SelectDateVC.swift in Sources */,
 				521BF541249D8B8300A282A4 /* ContactUsViewController.swift in Sources */,
+				8574363F250E9CD700200DD6 /* forget_password_presenter.swift in Sources */,
 				A8AC50A32492982600950B6B /* ChangeOrderStatusModel.swift in Sources */,
 				5241004E249053CD00FD2DDD /* NotificationsPresenter.swift in Sources */,
 				5289BEDF2478D76D00CC5D08 /* LoginResponse.swift in Sources */,
 				A8F60FDC24992EA4003BEEC9 /* ChangeLanguageViewController.swift in Sources */,
+				85A7F5DC25136FA2004C78E3 /* verifiy_password.swift in Sources */,
+				8574363D250E935B00200DD6 /* forgetpassword.swift in Sources */,
 				35201DD1247BFE7400DF3ED6 /* DeliveryStatusPresenter.swift in Sources */,
 				5289BEF52478F1FE00CC5D08 /* LoginViewController.swift in Sources */,
 				523860E1248299B60068363F /* ChangePassResposne.swift in Sources */,
@@ -985,11 +1079,14 @@
 				356C2370247964FC007C23F5 /* RoundTextFieldExtension.swift in Sources */,
 				5226EF71247CF43000120720 /* ToastMessages.swift in Sources */,
 				5229653124991A7900AEDDF0 /* ProfileResponse.swift in Sources */,
+				85BDB0F1250A3AE10051E1A6 /* alertExention.swift in Sources */,
 				5241004C24904CDF00FD2DDD /* NotificationsModel.swift in Sources */,
 				A8598D902496DAC7009618EB /* RetrieveingOrderModel.swift in Sources */,
 				A8F60FD324991056003BEEC9 /* TermsAndConditions.swift in Sources */,
+				85743641250E9D6000200DD6 /* forget_password_model.swift in Sources */,
 				5289BEEA2478DE6300CC5D08 /* CodeHelpers.swift in Sources */,
 				A8F60FD7249914DB003BEEC9 /* TermsAndConditionsPresenter.swift in Sources */,
+				85BDB0F0250A3AE10051E1A6 /* AlertController.swift in Sources */,
 				5247704F247620CC00B8991E /* SceneDelegate.swift in Sources */,
 				5229653524991A9800AEDDF0 /* ProfilePresenter.swift in Sources */,
 				5211DCEE249F587600A881E9 /* OrdersSearchByDateVC.swift in Sources */,
@@ -1001,6 +1098,7 @@
 				52FD88D92480FDF200ACB8EC /* SideMenuTableViewController.swift in Sources */,
 				52F194C4249D8F6100D280E0 /* RetrieveingOrderPresenter.swift in Sources */,
 				A8EB286B24904722001EBFB7 /* NewOrderDetailsPresenter.swift in Sources */,
+				85A7F5DE25136FB6004C78E3 /* new_password.swift in Sources */,
 				A8609A7B249B7FC9003EEC81 /* LocalizExtension.swift in Sources */,
 				5226EF69247CEA4C00120720 /* SplashViewController.swift in Sources */,
 			);
@@ -1270,6 +1368,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.Teer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1294,6 +1393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.Teer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, LoginVCProtocol{
     @IBOutlet weak var login: CustomBtn!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var forgetPassword: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,27 +27,61 @@ class LoginViewController: UIViewController, LoginVCProtocol{
         if  MOLHLanguage.isArabic(){
             self.phone.textAlignment = .right
             self.password.textAlignment = .right
+            self.forgetPassword.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.right
+            self.forgetPassword.setTitle("forget_password".localize, for: .normal)
         }
+        phone.delegate = self
+        password.delegate = self
+        
     }
     override func viewWillAppear(_ animated: Bool) {
           presenter.setVCDelegate(vcDelegate: self)
        }
     
     @IBAction func onLoginTapped(_ sender: Any) {
-        self.presenter.loginWithPhone(phone: phone.text!, password: password.text!)
+        
+        
+       validate_data()
         //print("btn login is pressed with phone: \(phone.text!), password: \(password.text!)")
         //print("welcome")
 //         let view = UIStoryboard(name: "ChangeLanguage", bundle: nil).instantiateViewController(withIdentifier: "ChangeLanguageViewController") as! ChangeLanguageViewController
 //               self.present(view, animated: true, completion: nil)
     }
+    func validate_data()
+    {
+        guard let phone_txt = phone.text, !phone_txt.isEmpty else{
+            
+            showAlert(msg: "enter_phone".localize)
+            phone.attributedPlaceholder =  NSAttributedString(string: "enter_phone".localize, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 12)!])
+            
+            return
+        }
+       guard let password_txt = password.text, !password_txt.isEmpty else{
+            
+        showAlert(msg: "enter_password".localize)
+            password.attributedPlaceholder =  NSAttributedString(string: "enter_password".localize, attributes:[NSAttributedString.Key.foregroundColor: UIColor.red,NSAttributedString.Key.font :UIFont(name: "Arial", size: 12)!])
+            
+            return
+        }
+        
+        self.presenter.loginWithPhone(phone: phone_txt, password: password_txt)
+        
+    }
+    
+    @IBAction func forget_password(_ sender: Any) {
+        let view = UIStoryboard(name: "forgetPassword", bundle: nil).instantiateViewController(withIdentifier: "forgetpassword") as! forgetpassword
+        view.modalPresentationStyle = .fullScreen
+        self.present(view, animated: true, completion: nil)
+
+    }
+    
 func goToHomeScreen() {
 //    CodeHelper.saveCurrentUserToken(userToken: (user?.apiToken)!)
-        //let homeScreen = UIStoryboard(name: "DeliveryStatus", bundle: nil)
-//    let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
-//        //let vc = homeScreen.instantiateInitialViewController()
-//        self.present(view, animated: true, completion: nil)
-    let view = UIStoryboard(name: "ChangeLanguage", bundle: nil).instantiateViewController(withIdentifier: "ChangeLanguageViewController") as! ChangeLanguageViewController
-    self.present(view, animated: true, completion: nil)
+//        let homeScreen = UIStoryboard(name: "DeliveryStatus", bundle: nil)
+    let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
+        //let vc = homeScreen.instantiateInitialViewController()
+        self.present(view, animated: true, completion: nil)
+    
     
     }
     
@@ -85,4 +120,10 @@ func goToHomeScreen() {
 //        scrollView.scrollIndicatorInsets = scrollView.contentInset
 //    }
     
+}
+extension LoginViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
+    }
 }

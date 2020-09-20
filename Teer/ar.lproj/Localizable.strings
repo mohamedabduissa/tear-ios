@@ -29,3 +29,20 @@
 " at " = " في ";
 
 "Message Body" = "محتوى الرسالة";
+"forget_password" = "نسيت كلمه المرور؟";
+"ok" = "موافق";
+"select_language" = "من فضلك اختار اللغه";
+"enter_phone" = "ادخل رقم الهاتف";
+"enter_password" = "ادخل كلمه المرور";
+"phone_or_password_wrong" = "الهاتف او كلمه المرور غير صحيحه";
+"next" = "التالي";
+"phone" = "رقم الهاتف";
+"something_wrong" = "وقع خطا ما";
+"enter_code" = "ادخل الكود الذي تم ارساله الي هاتفك";
+"verification_code" = "رمز التحقق";
+"new_password" = "كلمه المرور الجديده";
+"re_enter_password" = "اعد كتابه كلمه المرور";
+"save" = "حفظ";
+"enter_verifiction" = "ادخل رمز التحقيق";
+"passsord_reset_successfully" = "تم تغير كلمه المرور بنجاح";
+"password_dismatch" = "كلمه السر غير متطابقه";

@@ -14,10 +14,19 @@ class LanguageController: UIViewController {
     @IBOutlet weak var chooseLanguageDropDown: DropDown!
     
     @IBAction func onNextTapped(_ sender: Any) {
+        validate()
+       
+    }
+    func validate()
+    {
+        guard let text = chooseLanguageDropDown.text, !text.isEmpty else{
+            ShowAlertView.showAlert(title: "", msg: "select_language".localize, sender: self)
+            return
+        }
         let storyBoard : UIStoryboard = UIStoryboard(name: "Login", bundle:nil)
-           let nextViewController = storyBoard.instantiateViewController(withIdentifier: "loginScreen") as! UIViewController
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "loginScreen") as! UIViewController
         //nextViewController.modalTransitionStyle = .flipHorizontal
-           self.present(nextViewController, animated:true, completion:nil)
+        self.present(nextViewController, animated:true, completion:nil)
     }
     override func viewDidLoad() {
         
@@ -32,6 +41,13 @@ class LanguageController: UIViewController {
 //          chooseLanguageDropDown.didSelect{(selectedText , index ,id) in
 //          //self.valueLabel.text = "Selected String: \(selectedText) \n index: \(index)"
 //          }
+    }
+    override init(nibName : String?, bundle : Bundle?) {
+        
+        super.init(nibName: nibName, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

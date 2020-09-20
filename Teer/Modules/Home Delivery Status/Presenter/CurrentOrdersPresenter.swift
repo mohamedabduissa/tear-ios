@@ -49,7 +49,15 @@ class CurrentOrdersPresenter {
           currentOrder = currentOrdersList[index]
           cell.displayOrderNumber(number:currentOrder.key)
           cell.displayOrderPrice(price: currentOrder.price)
+//        CurrentOrdersResponse.save("\(currentOrder.key)")
       }
+    func request_number(for index: Int) -> String
+    {
+        let currentOrder : CurrentOrdersResponse
+        currentOrder = currentOrdersList[index]
+        return "\(currentOrder.key)"
+        
+    }
 }
 
 protocol CurrentOrdersProtocol: NSObjectProtocol {

@@ -41,7 +41,7 @@ class NotificationsTableVC: UIViewController {
         self.notificationsTable.rowHeight = 120.0
         dataSource.delegate = self as! DRHTableviewDataModelDelegate
         dataSource.getNotifications()
-
+        print("token\(UserDefaults.standard.string(forKey:"userToken"))")
         DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
             //self.hideActivityIndicator()
           //  self.displayNotificationsData()

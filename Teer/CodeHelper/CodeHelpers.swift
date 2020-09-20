@@ -12,7 +12,8 @@ final class CodeHelper{
     static let appLogo = ""
     
     enum ServerTypes : String{
-        case live = "http://api-ksa.com/demo/taar/"
+          case live = "https://tayeer.co/"
+//        case live = "http://api-ksa.com/demo/taar/"
         //case demo = "http://api-ksa.com/demo/taar/"
     }
     

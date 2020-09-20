@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import MOLH
 //import SwiftyJSON
 
 protocol DRHTableviewDataModelDelegate:class{
@@ -23,7 +24,8 @@ class NotificationsModel: NSObject {
     func getNotifications() {
         var data: [AnyObject]? = nil
         let error: Error? = nil
-        let headers : HTTPHeaders = ["Authorization": "Bearer "+"\(CodeHelper.getCurrentUserToken())"]
+        let language = MOLHLanguage.currentAppleLanguage()
+        let headers : HTTPHeaders = ["Authorization": "Bearer "+"\(CodeHelper.getCurrentUserToken())", "Accept-Language":"\(language)"]
         delegate?.startLoading()
         
         AF.request(notificationsURL, method: .get, encoding : URLEncoding.default, headers:headers).responseJSON { (response) in

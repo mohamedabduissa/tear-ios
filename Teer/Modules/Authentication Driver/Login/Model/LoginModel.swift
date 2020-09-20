@@ -18,10 +18,20 @@ class LoginModel {
                "phone" : phone,
                "password" : password
            ]
+        print("uri\(loginUrl)")
+        Indicator.sharedInstance.showIndicator()
            AF.request(loginUrl, method: .post, parameters: parameters)
                .responseJSON { response in
-                   print(response)
+                Indicator.sharedInstance.hideIndicator()
+
+                   print("response\(response)")
+                
                 guard response.data != nil else { return }
+                if response.response?.statusCode == 400{
+                    closure(nil)
+                    
+                }
+                else if response.response?.statusCode == 200{
                    do {
                     let json = JSON(response.value!)
                     print(json)
@@ -36,10 +46,16 @@ class LoginModel {
                     CodeHelper.saveCurrentUserToken(userToken: (user.apiToken)!)
 
                     closure(user)
-                   } catch _ {
+                   } catch (let error) {
                        closure(nil)
+                    print("[aseinfg")
+                    print("error\(error.localizedDescription)")
 
                    }
+                }
+                else{
+                    closure(nil)
+                }
            }
            
        }
