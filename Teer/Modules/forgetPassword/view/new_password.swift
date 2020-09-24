@@ -24,6 +24,7 @@ class new_password: UIViewController {
 
         // Do any additional setup after loading the view.
         set_up_view()
+        hideKeyboardWhenTappedAround()
     }
     func set_up_view()
     {
@@ -91,4 +92,14 @@ extension new_password: UITextFieldDelegate{
            view.endEditing(true)
            return false
        }
+    func hideKeyboardWhenTappedAround() {
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+         tap.cancelsTouchesInView = false
+         view.addGestureRecognizer(tap)
+     }
+     
+     @objc func dismissKeyboard() {
+    view.endEditing(true)
+         // do someting...
+     }
 }

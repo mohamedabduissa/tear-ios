@@ -121,17 +121,59 @@ class OrdersHistoryModel{
     
     let ordersHistoryURL = URL(string: CodeHelper.APIBaseUrl+"orders/history")!
     
-    func getAllOrdersHistory(completion: @escaping (String?, _ order:[OrdersData]?) -> Void) {
+//    func getAllOrdersHistory(completion: @escaping (String?, _ order:[OrdersData]?) -> Void) {
+//        let headers : HTTPHeaders = ["Content-Type": "application/json",
+//                                     "Accept": "application/json",
+//                                     "Authorization": "Bearer "+"\(CodeHelper.getCurrentUserToken())"]
+//        Indicator.sharedInstance.showIndicator()
+//        AF.request(ordersHistoryURL, method: .get, parameters: nil, encoding : JSONEncoding.default, headers:headers).responseJSON { (response) in
+//            Indicator.sharedInstance.hideIndicator()
+//            if response.response?.statusCode == 200{
+//                print(response)
+//                print("success")
+//            }
+//            switch response.result{
+//            case .failure:
+//                print("faild")
+//            case .success:
+//                
+//                let json = JSON(response.value!)
+//                print(json)
+//                var ordersHistory = [OrdersData]()
+//                let orders = json["data"].arrayValue
+//                for order in orders
+//                {
+//                    let key = order["key"].stringValue
+//                    let clientName = order["clientName"].stringValue
+//                    let address = order["address"].stringValue
+//                    let price = order["price"].stringValue
+//                    let status = order["status"].stringValue
+//                    let deliverDate = order["deliverDate"].stringValue
+//                    let orders = OrdersData(key: key, clientName: clientName, address: address, price: price, status: status, deliverDate: deliverDate)
+//                    ordersHistory.append(orders)
+//                    //ordersHistory.append(currentOrder)
+//                    
+//                }
+//                print("oder history\(ordersHistory)")
+//                completion(nil,ordersHistory)
+//                //   print(currentOrdersList[0].key)
+//            }
+//            
+//            
+//        }
+//    }
+    func getAllOrdersHistoryByStatus(url: URL,completion: @escaping (String?, _ order:[OrdersData]?) -> Void) {
         let headers : HTTPHeaders = ["Content-Type": "application/json",
                                      "Accept": "application/json",
                                      "Authorization": "Bearer "+"\(CodeHelper.getCurrentUserToken())"]
-        print("dddd",CodeHelper.getCurrentUserToken())
-        
-        AF.request(ordersHistoryURL, method: .get, parameters: nil, encoding : JSONEncoding.default, headers:headers).responseJSON { (response) in
-            
+       
+        Indicator.sharedInstance.showIndicator()
+
+        AF.request(url, method: .get, parameters: nil, encoding : JSONEncoding.default, headers:headers).responseJSON { (response) in
+            Indicator.sharedInstance.hideIndicator()
+
             if response.response?.statusCode == 200{
                 print(response)
-                print("success")
             }
             switch response.result{
             case .failure:
@@ -155,7 +197,6 @@ class OrdersHistoryModel{
                     //ordersHistory.append(currentOrder)
                     
                 }
-                print("oder history\(ordersHistory)")
                 completion(nil,ordersHistory)
                 //   print(currentOrdersList[0].key)
             }

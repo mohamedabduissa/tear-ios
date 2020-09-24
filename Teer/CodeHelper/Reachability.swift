@@ -42,8 +42,8 @@ class NetworkManager{
                                   y: window!.frame.height - 70,
                                   width: window!.frame.width,
                                   height: 70)
-        toastLabel?.text = TeerError.connection.error
-       
+       //        toastLabel?.text = TeerError.connection.error
+
     }
     
     func observeReachability(_ val : Bool) {
@@ -70,7 +70,14 @@ class NetworkManager{
                 self.networkReachable = true
             }
         }
-        self.updateToastStatus(self.networkReachable)
+        
+//        if networkReachable == false{
+////            self.updateToastStatus(self.networkReachable)
+//
+//        toastLabel?.text = TeerError.connection.error
+//            self.updateToastStatus(self.networkReachable)
+//
+//        }
 //        reachabilityManager?.startListening(nil)
     }
     

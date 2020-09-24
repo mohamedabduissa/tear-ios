@@ -13,8 +13,7 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
     
     func changeOrderStatusSuccess() {
         presenter.getNewOrderDetails()
-
-             changeStatusDetails(status: status!)
+        changeStatusDetails(status: status!)
     }
  
     
@@ -52,7 +51,6 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
     override func viewDidLoad() {
         super.viewDidLoad()
         changeOrderStatusPresenter.setVCDelegate(vcDelegate: self)
-        self.backButton.transform = self.backButton.transform.rotated(by: CGFloat(Double.pi))
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.callBtnDidTapped (_:)))
         callView.addGestureRecognizer(gesture)
 
@@ -98,13 +96,15 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
     
 
       @objc func callBtnDidTapped(_ sender:UITapGestureRecognizer){
-        guard let url = URL(string: "tel://\(clientPhoneNumber)"),
-                 UIApplication.shared.canOpenURL(url) else { return }
-             if #available(iOS 10, *) {
-                 UIApplication.shared.open(url)
-             } else {
-                 UIApplication.shared.openURL(url)
-             }
+        guard let url = URL(string: "tel://\(01153364588)") else {
+        return //be safe
+        }
+
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
       }
     func displayOrderData(_ order: (orderNo: Int, name: String, phone: String, address: String, price: String, clientName: String, status: String, receivedAtTime: String, startedAtTime: String, finishedAtTime: String, time: String)) {
         orderNumberLabel.text = "#" + String(order.orderNo)
@@ -137,20 +137,19 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
     {
         switch status {
         case "new":
-           
-            changeOrderStatusBtn.setTitle("Start Journey".localize, for: .normal)
+            changeOrderStatusBtn.setTitle("accept order".localize, for: .normal)
             orderReceviedGrayView.isHidden = true
             orderReceviedGreenMarkImageView.isHidden = false
         case "processing":
-          
-            changeOrderStatusBtn.setTitle("order Deliverd".localize, for: .normal)
+   changeOrderStatusBtn.setTitle("Start Journey".localize, for: .normal)
+//            changeOrderStatusBtn.setTitle("order Deliverd".localize, for: .normal)
             startJourneyGreenMarkImageView.isHidden  = false
             startJourneyGrayView.isHidden = true
             orderReceviedGrayView.isHidden = true
             orderReceviedGreenMarkImageView.isHidden = false
             informationButton.isEnabled = false
         case "complete":
-       
+        changeOrderStatusBtn.setTitle("order Deliverd".localize, for: .normal)
             orderDeliverdGreenMarkImageView.isHidden = false
             orderDeliverdGrayView.isHidden = true
             orderReceviedGrayView.isHidden = true
@@ -163,6 +162,8 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
             informationButton.isEnabled = false
 
         case "cancel":
+            changeOrderStatusBtn.setTitle("cancel".localize, for: .normal)
+
             deliveredOrderTitelLabel.text = "canceled".localize
             deliveredOrderDescription.text = "Order had been canceled from customer".localize
             changeOrderStatusBtn.isEnabled = false
@@ -178,6 +179,8 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
         switch status {
         case "new":
             changeOrderStatusPresenter.changeOrderStatus(status: "processing", caneclReson: "")
+                       // changeOrderStatusBtn.setTitle("Start Journey".localize, for: .normal)
+
             informationButton.isEnabled = false
         case "processing":
             informationButton.isEnabled = false

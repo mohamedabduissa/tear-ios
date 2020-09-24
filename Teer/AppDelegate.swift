@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MOLHResetable {
 
           FirebaseApp.configure()
 
-
-        MOLHLanguage.setDefaultLanguage("en")
+        MOLHLanguage.setDefaultLanguage("ar")
         MOLH.shared.activate(true)
         
         return true

@@ -16,6 +16,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LanguageController" customModule="Teer" customModuleProvider="target">
             <connections>
                 <outlet property="chooseLanguageDropDown" destination="UJy-ij-PSw" id="bD7-DE-EuZ"/>
+                <outlet property="containerView" destination="OvQ-um-Df6" id="O4I-ZM-wUl"/>
+                <outlet property="flage" destination="sMa-cb-zqe" id="Oii-mr-ZZO"/>
+                <outlet property="nextBTN" destination="iQJ-kD-4Db" id="PfA-go-Mlg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="KHA-LI-H8d"/>
             </connections>
         </placeholder>
@@ -49,32 +52,56 @@
                         <action selector="onNextTapped:" destination="-1" eventType="touchUpInside" id="FTi-bL-Jcz"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJy-ij-PSw" customClass="DropDown" customModule="iOSDropDown">
-                    <rect key="frame" x="40" y="408" width="334" height="50"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-um-Df6">
+                    <rect key="frame" x="20" y="408" width="374" height="50"/>
+                    <subviews>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMa-cb-zqe">
+                            <rect key="frame" x="2" y="0.0" width="30" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="4vJ-4N-boH"/>
+                            </constraints>
+                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJy-ij-PSw" customClass="DropDown" customModule="iOSDropDown">
+                            <rect key="frame" x="32" y="0.0" width="342" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="kc9-lE-jB3"/>
+                        <constraint firstAttribute="bottom" secondItem="sMa-cb-zqe" secondAttribute="bottom" id="4Ax-O1-8so"/>
+                        <constraint firstAttribute="height" constant="50" id="4fg-G7-put"/>
+                        <constraint firstItem="sMa-cb-zqe" firstAttribute="top" secondItem="OvQ-um-Df6" secondAttribute="top" id="7CN-bk-b5U"/>
+                        <constraint firstAttribute="bottom" secondItem="UJy-ij-PSw" secondAttribute="bottom" id="HtX-ut-pU7"/>
+                        <constraint firstItem="sMa-cb-zqe" firstAttribute="leading" secondItem="OvQ-um-Df6" secondAttribute="leading" constant="2" id="RXj-NN-hB7"/>
+                        <constraint firstItem="UJy-ij-PSw" firstAttribute="leading" secondItem="sMa-cb-zqe" secondAttribute="trailing" id="a5j-19-dI2"/>
+                        <constraint firstAttribute="trailing" secondItem="UJy-ij-PSw" secondAttribute="trailing" id="hrU-7B-nZx"/>
+                        <constraint firstItem="UJy-ij-PSw" firstAttribute="top" secondItem="OvQ-um-Df6" secondAttribute="top" id="kZS-qT-Y57"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="99n-ac-u4J" secondAttribute="trailing" id="1UB-d0-taT"/>
+                <constraint firstItem="OvQ-um-Df6" firstAttribute="top" secondItem="yke-Sf-yrR" secondAttribute="bottom" constant="40" id="7ex-cQ-Z82"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OvQ-um-Df6" secondAttribute="trailing" constant="20" id="BF3-F9-Dyc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yke-Sf-yrR" secondAttribute="trailing" constant="46" id="Cgs-Ue-C2L"/>
                 <constraint firstItem="yke-Sf-yrR" firstAttribute="top" secondItem="dZ0-ql-Pf6" secondAttribute="bottom" id="E69-bO-MOM"/>
                 <constraint firstItem="dZ0-ql-Pf6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="46" id="EBv-hy-Az5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iQJ-kD-4Db" secondAttribute="trailing" constant="30" id="Efm-GA-bOO"/>
+                <constraint firstItem="OvQ-um-Df6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="FQV-WZ-ZgX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dZ0-ql-Pf6" secondAttribute="trailing" constant="46" id="Ipw-ta-eH6"/>
-                <constraint firstItem="UJy-ij-PSw" firstAttribute="top" secondItem="yke-Sf-yrR" secondAttribute="bottom" constant="40" id="SRv-ZI-TWw"/>
                 <constraint firstItem="99n-ac-u4J" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zl4-J7-Win"/>
                 <constraint firstItem="yke-Sf-yrR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="46" id="bUi-OU-hze"/>
                 <constraint firstItem="iQJ-kD-4Db" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="fNo-9Q-1zP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iQJ-kD-4Db" secondAttribute="bottom" constant="43" id="hRD-1O-OGx"/>
                 <constraint firstAttribute="bottom" secondItem="99n-ac-u4J" secondAttribute="bottom" id="hb6-vY-x9d"/>
                 <constraint firstItem="dZ0-ql-Pf6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="260" id="iMb-1s-Mhu"/>
-                <constraint firstItem="UJy-ij-PSw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="nOq-is-WTK"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UJy-ij-PSw" secondAttribute="trailing" constant="40" id="o2j-nU-YIs"/>
                 <constraint firstItem="99n-ac-u4J" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zTJ-kC-gxD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

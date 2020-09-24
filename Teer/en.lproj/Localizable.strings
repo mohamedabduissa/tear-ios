@@ -46,3 +46,7 @@
 "enter_verifiction" = "enter verification code";
 "passsord_reset_successfully" = "passsord reset successfully";
 "password_dismatch" = "password dose not match";
+"log_in" = "log in";
+"message_title" = "message title";
+"message_type" = "message type";
+"code_Not_match" = "code not match";

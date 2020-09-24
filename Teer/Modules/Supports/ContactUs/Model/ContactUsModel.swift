@@ -24,7 +24,7 @@ class ContactUsModel {
            ]
            AF.request(ContactUsUrl, method: .post, parameters: parameters, encoding : JSONEncoding.default, headers: headers)
                .responseJSON { response in
-                   print(response)
+                   print("contact\(response)")
                 guard response.data != nil else { return }
                    do {
                     let json = JSON(response.value!)

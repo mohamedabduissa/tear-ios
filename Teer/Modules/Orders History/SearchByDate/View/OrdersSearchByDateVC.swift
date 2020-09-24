@@ -11,6 +11,8 @@ import MOLH
 
 class OrdersSearchByDateVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource, OrdersSearchProtocol{
     
+    
+    
     @IBOutlet weak var selectedDate: UILabel!
     @IBOutlet weak var orderSearchBackBtn: UIButton!
     @IBOutlet weak var noOrdersFoundView: UIView!
@@ -21,6 +23,7 @@ class OrdersSearchByDateVC: UIViewController ,UICollectionViewDelegate,UICollect
       let toastMessage = ToastMessages()
     override func viewDidLoad() {
         super.viewDidLoad()
+        noOrdersFoundView.isHidden = true
         searchOrdersCollectionView?.delegate = self
         searchOrdersCollectionView?.dataSource = self
             if  MOLHLanguage.isArabic(){
@@ -56,7 +59,10 @@ func getOrdersSearchSucces() {
     noOrdersFoundView?.isHidden = true
     searchOrdersCollectionView.reloadData()
     }
-   
+   func hideViewIndecator() {
+       noOrdersFoundView?.isHidden = true
+
+   }
     
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     print("getAllOrdersSearchCount",ordersSearchPresenter.getAllOrdersSearchCount())

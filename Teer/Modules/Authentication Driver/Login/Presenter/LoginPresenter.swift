@@ -26,7 +26,7 @@ class LoginPresenter {
         self.loginModel.login(phone: phone, password: password, closure: {(user) in
             if user != nil {
                 if (user?.email) != "" {
-                    print("ssssssss")
+                    print("ssssssss", CodeHelper.getCurrentUserToken())
                     CodeHelper.saveCurrentUserId(userID: (user?.key)!)
                     CodeHelper.saveCurrentUserToken(userToken: (user?.apiToken)!)
                     CodeHelper.saveCurrentUserName(userName: (user?.name)!)

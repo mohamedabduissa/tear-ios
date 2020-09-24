@@ -19,16 +19,17 @@ class OrdersSearchModel{
     func getOrdersHistoryByDate(date: String, completion: @escaping (String?, _ order:[OrdersData]?) -> Void) {
         let headers : HTTPHeaders = ["Content-Type": "application/json",
                                      "Accept": "application/json",
-                                     "Authorization": "Bearer "+"\(CodeHelper.getCurrentUserToken())"]
+                                     "Authorization": "Bearer " + "\(CodeHelper.getCurrentUserToken())"]
 //        let parameters: [String: Any] = [
 //            "date" : CodeHelper.getSelectedDate() ,
-//        ]
+//        iiF5DL5YPFJHuKxA9IiN3QuQMa5TYHQtK2xKKCJOQDrbmEN46x6DcFEQaBUm3IGiA4DoXxOQe4KJBaWGIDSckj3hz6ZY5echdUZ6SyMKyX19vn6Y4pUviyDW
+//        \(CodeHelper.getCurrentUserToken())
         print("orders/history?&date=",CodeHelper.getCurrentUserToken())
         print(ordersHistoryURL)
-        print(CodeHelper.getSelectedDate())
-        
+        print("selected dAte",CodeHelper.getSelectedDate())
+        Indicator.sharedInstance.showIndicator()
         AF.request(ordersHistoryURL, method: .get, parameters: nil, encoding : JSONEncoding.default, headers:headers).responseJSON { (response) in
-            
+            Indicator.sharedInstance.hideIndicator()
             if response.response?.statusCode == 200{
                 print(response)
             }
@@ -38,7 +39,7 @@ class OrdersSearchModel{
             case .success:
                 
                 let json = JSON(response.value!)
-                print(json)
+                print("valuew ",json)
                 var ordersHistory = [OrdersData]()
                 let orders = json["data"].arrayValue
                 for order in orders

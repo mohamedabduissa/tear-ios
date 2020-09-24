@@ -16,6 +16,11 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
     let orderNumber = NewOrderDetailsResponse.self
     @IBOutlet weak var currentOrdersTableView: UITableView?
     
+    @IBOutlet weak var ttt: UILabel!
+    
+    
+    @IBOutlet weak var sss: UIImageView!
+    
     @IBOutlet weak var orderHistoryBackBtn: UIButton!
     @IBOutlet weak var ordersHistorySelectDate: UIButton!
     @IBOutlet weak var orderHistoryDate: UILabel!
@@ -31,8 +36,32 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
     @IBOutlet weak var cancel: UILabel!
     
     
+    
+    @IBOutlet weak var underway: UIImageView!
+    
+    
+    
+    @IBOutlet weak var delivered: UIImageView!
+    
+    
+    @IBOutlet weak var reterive: UIImageView!
+    
+    
+    @IBOutlet weak var total: UIImageView!
+    
+    
+    @IBOutlet weak var processingImg: UIImageView!
+    
+    @IBOutlet weak var newImg: UIImageView!
+    
+    @IBOutlet weak var cancelImg: UIImageView!
+    @IBOutlet weak var completeImg: UIImageView!
     //MARK:- OrdersHistory Outlets
     @IBOutlet weak var ordersHistoryCollectionview: UICollectionView!
+    
+    
+    
+    
     var orders = [OrdersData]()
     
 
@@ -45,9 +74,7 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //MARK:- Date for Orders History
-        print("xxxxxx")
-//        ordersHistoryPresenter.getAllOrdersHistory()
+     
         currentOrdersTableView?.rowHeight = 120
         if restorationIdentifier == "2"{
         ordersHistoryCollectionview?.delegate = self
@@ -57,7 +84,9 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
             }
             
         }
-   set_tap_gesture()
+        
+       
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,48 +100,53 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
             print("res\(result)")
             orderHistoryDate.text = result
         ordersHistoryPresenter.setVCDelegate(vcDelegate: self)
-        ordersHistoryPresenter.getAllOrdersHistory()
+            ordersHistoryPresenter.getAllOrdersHistoryBYStatus(status: "total")
+
         ordersHistoryCollectionview?.reloadData()
            
+            set_tap_gesture()
 
         }
        
     }
     func set_tap_gesture()
     {
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.cancel_order))
-            cancel.addGestureRecognizer(tapGestureRecognizer)
+//        total.contentMode = UIView.ContentMode.scaleAspectFill
+//              total.clipsToBounds = true
+        let cancel_tap = UITapGestureRecognizer(target: self, action: #selector(self.cancel_order))
+            reterive.addGestureRecognizer(cancel_tap)
         
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.complete_order))
-        complete.addGestureRecognizer(tapGestureRecognizer)
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.total_order))
-        totalOrdersHistory?.addGestureRecognizer(tapGestureRecognizer)
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.processing_order))
-        processing.addGestureRecognizer(tapGestureRecognizer)
-
+        let complete_tap = UITapGestureRecognizer(target: self, action: #selector(self.complete_order))
+        delivered.addGestureRecognizer(complete_tap)
+        let total_tap = UITapGestureRecognizer(target: self, action: #selector(self.total_order))
+        total.addGestureRecognizer(total_tap)
+        let processing_tap = UITapGestureRecognizer(target: self, action: #selector(self.processing_order))
+        underway.addGestureRecognizer(processing_tap)
         
     }
     
     
     @objc func cancel_order() {
-        
-        ordersHistoryPresenter.type = "cancel"
+        ordersHistoryPresenter.getAllOrdersHistoryBYStatus(status: "cancel")
         ordersHistoryCollectionview.reloadData()
         
         
     }
     
     @objc func processing_order() {
-        ordersHistoryPresenter.type = "processing"
+        ordersHistoryPresenter.getAllOrdersHistoryBYStatus(status: "processing")
         ordersHistoryCollectionview.reloadData()
+
         
     }
     @objc func complete_order() {
-        ordersHistoryPresenter.type = "complete"
+        ordersHistoryPresenter.getAllOrdersHistoryBYStatus(status: "complete")
+
         ordersHistoryCollectionview.reloadData()
         
     }
     @objc func total_order() {
+        ordersHistoryPresenter.getAllOrdersHistoryBYStatus(status: "total")
        ordersHistoryCollectionview.reloadData()
 
         

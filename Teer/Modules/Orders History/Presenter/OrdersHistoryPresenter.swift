@@ -9,7 +9,6 @@
 import Foundation
 class OrdersHistoryPresenter {
     var filterd = [OrdersData]()
-     public var type = ""
    var num = ""
         let ordersHistoryModel: OrdersHistoryModel
         var ordersHistoryDelegate: OrdersHistoryProtocol?
@@ -24,12 +23,45 @@ class OrdersHistoryPresenter {
             self.ordersHistoryDelegate = vcDelegate
         }
         
-        func getAllOrdersHistory() {
-            self.ordersHistoryModel.getAllOrdersHistory(completion: {error , ordersHistory in
-               
+//        func getAllOrdersHistory() {
+//            self.ordersHistoryModel.getAllOrdersHistory(completion: {error , ordersHistory in
+//
+//                if ordersHistory != nil && ordersHistory?.count != 0 {
+//                   // print(CodeHelper.getCurrentUserToken())
+//                    //print("wwwww.....",order!)
+//                    self.ordersHistoryList = ordersHistory!
+//                    self.ordersHistoryDelegate?.getOrdersHistorySucces()
+//                }
+//                else{
+//                    self.ordersHistoryDelegate?.showError(msg: "Something went wrong")
+//                }
+//
+//            })
+//
+//        }
+//
+    
+    
+    
+    func getAllOrdersHistoryBYStatus(status: String) {
+        var ordersURL = URL(string: CodeHelper.APIBaseUrl+"orders/history")!
+               switch status {
+               case "cancel":
+                     ordersURL = URL(string: CodeHelper.APIBaseUrl+"orders/history?status=cancel")!
+
+               case "complete":
+                     ordersURL = URL(string: CodeHelper.APIBaseUrl+"orders/history?status=complete")!
+               case "processing":
+                ordersURL = URL(string: CodeHelper.APIBaseUrl+"orders/history?status=processing")!
+               default:
+                    ordersURL = URL(string: CodeHelper.APIBaseUrl+"orders/history")!
+
+                   
+               }
+          
+        self.ordersHistoryModel.getAllOrdersHistoryByStatus(url: ordersURL, completion: {error , ordersHistory in
                 if ordersHistory != nil && ordersHistory?.count != 0 {
-                   // print(CodeHelper.getCurrentUserToken())
-                    //print("wwwww.....",order!)
+                    
                     self.ordersHistoryList = ordersHistory!
                     self.ordersHistoryDelegate?.getOrdersHistorySucces()
                 }
@@ -38,27 +70,13 @@ class OrdersHistoryPresenter {
                 }
                 
             })
-            
-        }
+        
+    }
     
     func getAllOrdersHistoryCount()-> Int
     {
+        return ordersHistoryList.count
 
-        print("inside coun")
-        switch type {
-        case "cancel":
-//            let oredr = ordersHistoryList
-            filterd = ordersHistoryList.filter { $0.status == "cancel" }
-            return filterd.count
-        case "complete":
-            filterd = ordersHistoryList.filter { $0.status == "complete" }
-            return filterd.count
-        case "processing":
-            filterd = ordersHistoryList.filter { $0.status == "processing" }
-            return filterd.count
-        default:
-            return ordersHistoryList.count
-        }
 
     }
     func configure(cell: OrdersHistoryCollectionViewCell, for index: Int) {
@@ -73,7 +91,8 @@ class OrdersHistoryPresenter {
             currentOrder = filterd[index]
 
         }
-          
+//          currentOrder = filterd[index]
+
         cell.orderNumber.text = "#" + "\(String(describing: currentOrder.key!))"
         cell.name.text = currentOrder.clientName
         cell.address.text = currentOrder.address

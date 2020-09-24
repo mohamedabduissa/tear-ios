@@ -16,7 +16,6 @@ class ContactUsViewController: UIViewController, ContactUsVCProtocol {
     let presenter = ContactUsPresenter(contactModel: ContactUsModel())
        let toastMessage = ToastMessages()
     
-
     @IBOutlet weak var send: CustomBtn!
     @IBOutlet weak var messageTitle: UITextField!
     @IBOutlet weak var messageDropDown: DropDown!
@@ -25,13 +24,22 @@ class ContactUsViewController: UIViewController, ContactUsVCProtocol {
     @IBOutlet weak var backBtnImage: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         messageBody.delegate = self
         messageTitle.roundAndShodowTextField()
+        messageTitle.placeholder = "message_title".localize
+        messageDropDown.placeholder = "message_type".localize
         messageDropDown.roundAndShodowTextField()
         messageBody.layer.cornerRadius = 20
         messageBody.layer.borderWidth = 1.0
         messageBody.layer.borderColor = #colorLiteral(red: 0.7954400182, green: 0.7955744863, blue: 0.7954223156, alpha: 1)
         messageBody.textColor = .lightGray
+        messageTitle.layer.cornerRadius = 20
+        messageTitle.layer.borderWidth = 1.0
+        messageTitle.layer.borderColor = #colorLiteral(red: 0.7954400182, green: 0.7955744863, blue: 0.7954223156, alpha: 1)
+        messageDropDown.layer.cornerRadius = 20
+        messageDropDown.layer.borderWidth = 1.0
+        messageDropDown.layer.borderColor = #colorLiteral(red: 0.7954400182, green: 0.7955744863, blue: 0.7954223156, alpha: 1)
         messageBody.text = "Message Body".localize
         // The list of array to display. Can be changed dynamically
         messageDropDown.optionArray = ["Complaint", "Suggestion", "Order", "Other"]
@@ -44,7 +52,7 @@ class ContactUsViewController: UIViewController, ContactUsVCProtocol {
         messageDropDown.didSelect{(selectedText , index ,id) in
         //self.valueLabel.text = "Selected String: \(selectedText) \n index: \(index)"
         }
-        self.listen2Keyboard(withView: self.send)
+//        self.listen2Keyboard(withView: self.send)
 
         if  MOLHLanguage.isArabic(){
                self.backBtnImage.transform = self.backBtnImage.transform.rotated(by: CGFloat(Double.pi))
@@ -100,4 +108,22 @@ class ContactUsViewController: UIViewController, ContactUsVCProtocol {
             textView.resignFirstResponder()
         }
     
+        func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+            if text == "\n" {
+                textView.resignFirstResponder()
+                return false
+            }
+            return true
+        }
+        func hideKeyboardWhenTappedAround() {
+             let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+             tap.cancelsTouchesInView = false
+             view.addGestureRecognizer(tap)
+         }
+         
+         @objc func dismissKeyboard() {
+        view.endEditing(true)
+             // do someting...
+         }
+
 }

@@ -100,7 +100,7 @@
                     </view>
                     <connections>
                         <outlet property="forgetPassword" destination="n3R-Fc-aaD" id="0Uv-Ay-7Re"/>
-                        <outlet property="login" destination="Lbk-jW-OJA" id="QBV-aD-Pz2"/>
+                        <outlet property="login" destination="Lbk-jW-OJA" id="CcO-wd-P3D"/>
                         <outlet property="password" destination="Ytj-Ak-GVa" id="wr3-Wu-L74"/>
                         <outlet property="phone" destination="aah-Tl-ZXC" id="UWj-YH-5qT"/>
                     </connections>

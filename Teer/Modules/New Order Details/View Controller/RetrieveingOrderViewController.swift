@@ -25,6 +25,7 @@ class RetrieveingOrderViewController: UIViewController,RetrieveingOrderProtocol,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         presenter.setVCDelegate(vcDelegate: self)
         
         retrieveingOrderTextView.text = "retrieveing reason".localize
@@ -97,4 +98,22 @@ class RetrieveingOrderViewController: UIViewController,RetrieveingOrderProtocol,
             //  self.dismiss(animated: true, completion: nil)
         })
     }
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    func hideKeyboardWhenTappedAround() {
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+         tap.cancelsTouchesInView = false
+         view.addGestureRecognizer(tap)
+     }
+     
+     @objc func dismissKeyboard() {
+    view.endEditing(true)
+         // do someting...
+     }
+    
 }

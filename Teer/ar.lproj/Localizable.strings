@@ -46,3 +46,7 @@
 "enter_verifiction" = "ادخل رمز التحقيق";
 "passsord_reset_successfully" = "تم تغير كلمه المرور بنجاح";
 "password_dismatch" = "كلمه السر غير متطابقه";
+"log_in" = "تسجيل الدخول";
+"message_title" = "عنوان الرساله";
+"message_type" = "نوع الرساله";
+"code_Not_match" = "الكود غير صحيح";

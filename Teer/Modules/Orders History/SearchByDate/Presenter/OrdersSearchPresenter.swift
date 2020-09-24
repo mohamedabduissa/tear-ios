@@ -33,6 +33,7 @@ class OrdersSearchPresenter {
                     CodeHelper.saveSelectedDate(selecteDate: "")
                 }
                 else{
+                    self.ordersSearchDelegate?.hideViewIndecator()
                     self.ordersSearchDelegate?.showError(msg: "Something went wrong")
                 }
                 
@@ -61,4 +62,5 @@ class OrdersSearchPresenter {
 protocol OrdersSearchProtocol: NSObjectProtocol {
     func showError(msg: String)
     func getOrdersSearchSucces()
+    func hideViewIndecator()
 }

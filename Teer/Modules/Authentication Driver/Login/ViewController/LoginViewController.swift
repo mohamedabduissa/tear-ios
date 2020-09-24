@@ -28,8 +28,10 @@ class LoginViewController: UIViewController, LoginVCProtocol{
             self.phone.textAlignment = .right
             self.password.textAlignment = .right
             self.forgetPassword.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.right
-            self.forgetPassword.setTitle("forget_password".localize, for: .normal)
         }
+        self.forgetPassword.setTitle("forget_password".localize, for: .normal)
+
+        print("currente lang\(MOLHLanguage.currentAppleLanguage())")
         phone.delegate = self
         password.delegate = self
         

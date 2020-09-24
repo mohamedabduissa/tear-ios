@@ -23,6 +23,7 @@ class verifiy_password: UIViewController {
 
         // Do any additional setup after loading the view.
         set_up_view()
+        hideKeyboardWhenTappedAround()
     }
     func set_up_view()
     {
@@ -59,7 +60,8 @@ class verifiy_password: UIViewController {
             go_next()
         }
         else{
-            print("code not passed")
+            showAlert(msg: "code_Not_match".localize)
+
         }
         
     }
@@ -89,4 +91,14 @@ extension verifiy_password: UITextFieldDelegate{
            view.endEditing(true)
            return false
        }
+    func hideKeyboardWhenTappedAround() {
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+         tap.cancelsTouchesInView = false
+         view.addGestureRecognizer(tap)
+     }
+     
+     @objc func dismissKeyboard() {
+    view.endEditing(true)
+         // do someting...
+     }
 }

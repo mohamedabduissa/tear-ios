@@ -26,7 +26,7 @@ class SelectDateVC: UIViewController {
                
                let myLocale = NSLocale(localeIdentifier: "en_CA")
         formatter.locale = myLocale as Locale
-        formatter.dateFormat = "YYYY/MM/dd"
+        formatter.dateFormat = "YYYY-MM-dd"
         dateChoosed = formatter.string(from: datePicker.date)
         print("date formate ..............ffd",dateChoosed)
         CodeHelper.saveSelectedDate(selecteDate: dateChoosed)

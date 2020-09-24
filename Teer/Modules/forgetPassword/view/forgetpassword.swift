@@ -22,6 +22,7 @@ class forgetpassword: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         set_up_view()
+        hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     
@@ -85,4 +86,14 @@ extension forgetpassword: UITextFieldDelegate{
            view.endEditing(true)
            return false
        }
+    func hideKeyboardWhenTappedAround() {
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+         tap.cancelsTouchesInView = false
+         view.addGestureRecognizer(tap)
+     }
+     
+     @objc func dismissKeyboard() {
+    view.endEditing(true)
+         // do someting...
+     }
 }

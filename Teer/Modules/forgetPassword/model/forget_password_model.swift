@@ -18,12 +18,12 @@ class forget_password_model {
            let parameters: [String: Any] = [
                "phone" : phone
            ]
-        print("uri\(forget_password_url)")
         Indicator.sharedInstance.showIndicator()
 
            AF.request(forget_password_url, method: .post, parameters: parameters)
                .responseJSON { response in
-                   print("response\(response)")
+                Indicator.sharedInstance.hideIndicator()
+
                 guard response.data != nil else { return }
                    do {
                     let json = JSONDecoder()

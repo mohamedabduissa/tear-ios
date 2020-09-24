@@ -74,6 +74,8 @@
 		52FD88D92480FDF200ACB8EC /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD88D82480FDF200ACB8EC /* SideMenuTableViewController.swift */; };
 		52FD88DB2480FE3300ACB8EC /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD88DA2480FE3300ACB8EC /* SideMenuTableViewCell.swift */; };
 		791C801207B917A34E7DC2C0 /* Pods_Teer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F86833853D88FF306052CBC /* Pods_Teer.framework */; };
+		85374922251B2D88002F8975 /* orderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85374921251B2D88002F8975 /* orderHistory.swift */; };
+		85374924251B2F34002F8975 /* imageViewDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85374923251B2F34002F8975 /* imageViewDesignable.swift */; };
 		856D229525138D5D00B0AE08 /* new_password_presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D229425138D5D00B0AE08 /* new_password_presenter.swift */; };
 		8574363B250E932100200DD6 /* forgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8574363A250E932100200DD6 /* forgetPassword.storyboard */; };
 		8574363D250E935B00200DD6 /* forgetpassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8574363C250E935B00200DD6 /* forgetpassword.swift */; };
@@ -192,6 +194,8 @@
 		52F52AEA249F3FD8003A2DFB /* SelectDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateVC.swift; sourceTree = "<group>"; };
 		52FD88D82480FDF200ACB8EC /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		52FD88DA2480FE3300ACB8EC /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		85374921251B2D88002F8975 /* orderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderHistory.swift; sourceTree = "<group>"; };
+		85374923251B2F34002F8975 /* imageViewDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewDesignable.swift; sourceTree = "<group>"; };
 		856D229425138D5D00B0AE08 /* new_password_presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new_password_presenter.swift; sourceTree = "<group>"; };
 		8574363A250E932100200DD6 /* forgetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = forgetPassword.storyboard; sourceTree = "<group>"; };
 		8574363C250E935B00200DD6 /* forgetpassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetpassword.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 				52024C51249A6C0400C8A26D /* OrdersHistoeyCollectionViewCell.swift */,
 				5248748F249B7047004BB5C0 /* OrdersHistoryCollectionVC.swift */,
 				52F52AEA249F3FD8003A2DFB /* SelectDateVC.swift */,
+				85374921251B2D88002F8975 /* orderHistory.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -624,6 +629,7 @@
 				5248748D249B4B9E004BB5C0 /* Reachability.swift */,
 				5211DCF8249F772100A881E9 /* HandelShowKeyboard.swift */,
 				85743644250EAE6A00200DD6 /* indicator.swift */,
+				85374923251B2F34002F8975 /* imageViewDesignable.swift */,
 			);
 			path = CodeHelper;
 			sourceTree = "<group>";
@@ -1079,10 +1085,12 @@
 				356C2370247964FC007C23F5 /* RoundTextFieldExtension.swift in Sources */,
 				5226EF71247CF43000120720 /* ToastMessages.swift in Sources */,
 				5229653124991A7900AEDDF0 /* ProfileResponse.swift in Sources */,
+				85374922251B2D88002F8975 /* orderHistory.swift in Sources */,
 				85BDB0F1250A3AE10051E1A6 /* alertExention.swift in Sources */,
 				5241004C24904CDF00FD2DDD /* NotificationsModel.swift in Sources */,
 				A8598D902496DAC7009618EB /* RetrieveingOrderModel.swift in Sources */,
 				A8F60FD324991056003BEEC9 /* TermsAndConditions.swift in Sources */,
+				85374924251B2F34002F8975 /* imageViewDesignable.swift in Sources */,
 				85743641250E9D6000200DD6 /* forget_password_model.swift in Sources */,
 				5289BEEA2478DE6300CC5D08 /* CodeHelpers.swift in Sources */,
 				A8F60FD7249914DB003BEEC9 /* TermsAndConditionsPresenter.swift in Sources */,
@@ -1360,10 +1368,10 @@
 				CODE_SIGN_ENTITLEMENTS = Teer/Teer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = Teer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1385,10 +1393,10 @@
 				CODE_SIGN_ENTITLEMENTS = Teer/Teer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = Teer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

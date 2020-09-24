@@ -12,10 +12,10 @@
 "FXP-gd-F9N.text" = "10";
 
 /* Class = "UILabel"; text = "Retrieves"; ObjectID = "IQ2-pR-4Kn"; */
-"IQ2-pR-4Kn.text" = "المسترجع";
+"h0J-z0-EDT.text" = "المسترجع";
 
 /* Class = "UILabel"; text = "Delivered"; ObjectID = "RcX-xA-35i"; */
-"RcX-xA-35i.text" = "تم تسليمه";
+"kHp-lL-Ghd.text" = "تم تسليمه";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "SNh-bC-d5u"; */
 "SNh-bC-d5u.text" = "Label";
@@ -30,7 +30,7 @@
 "cUg-gS-VWY.text" = "10";
 
 /* Class = "UILabel"; text = "Total"; ObjectID = "nYk-EQ-xDv"; */
-"nYk-EQ-xDv.text" = "الكلي";
+"fp9-iD-hE6.text" = "الكل";
 
 /* Class = "UILabel"; text = "10"; ObjectID = "toY-61-LsJ"; */
 "toY-61-LsJ.text" = "10";
@@ -46,3 +46,4 @@
 
 /* Class = "UILabel"; text = "LE"; ObjectID = "ygB-4q-lu4"; */
 "ygB-4q-lu4.text" = "ر.س";
+"erp-IR-RYg.text" = "قيد التسليم";
