@@ -13,6 +13,8 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
     
     
     var x: String = ""
+    var prossing = false
+    var complete_orders = false
     let orderNumber = NewOrderDetailsResponse.self
     @IBOutlet weak var currentOrdersTableView: UITableView?
     
@@ -74,7 +76,10 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        if prossing == true{
+//            underway.isFirstResponder = true
+            
+        }
         currentOrdersTableView?.rowHeight = 120
         if restorationIdentifier == "2"{
         ordersHistoryCollectionview?.delegate = self
@@ -100,10 +105,18 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
             print("res\(result)")
             orderHistoryDate.text = result
         ordersHistoryPresenter.setVCDelegate(vcDelegate: self)
+            if prossing == true {
+                ordersHistoryPresenter.getAllOrdersHistoryBYStatus(status: "processing")
+                ordersHistoryCollectionview.reloadData()
+            }
+            else if complete_orders == true{
+                ordersHistoryPresenter.getAllOrdersHistoryBYStatus(status: "complete")
+                ordersHistoryCollectionview.reloadData()
+            }
+            else{
             ordersHistoryPresenter.getAllOrdersHistoryBYStatus(status: "total")
-
         ordersHistoryCollectionview?.reloadData()
-           
+        }
             set_tap_gesture()
 
         }

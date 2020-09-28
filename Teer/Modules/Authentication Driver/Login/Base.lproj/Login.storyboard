@@ -21,19 +21,19 @@
                                 <viewLayoutGuide key="safeArea" id="fbX-rJ-bvy"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, Log in " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyW-wp-CVw">
-                                <rect key="frame" x="30" y="320.66666666666669" width="354" height="20.333333333333314"/>
+                                <rect key="frame" x="30" y="350.66666666666669" width="354" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-5y-Qpc">
-                                <rect key="frame" x="30" y="284" width="354" height="26.333333333333314"/>
+                                <rect key="frame" x="30" y="314" width="354" height="26.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fnC-kT-TcT">
-                                <rect key="frame" x="30" y="353" width="354" height="190"/>
+                                <rect key="frame" x="30" y="383" width="354" height="130"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aah-Tl-ZXC" customClass="CustomTextField" customModule="Teer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
@@ -44,7 +44,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ytj-Ak-GVa">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ytj-Ak-GVa">
                                         <rect key="frame" x="0.0" y="80" width="354" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -53,17 +53,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-Fc-aaD">
-                                        <rect key="frame" x="0.0" y="160" width="354" height="30"/>
-                                        <state key="normal" title="forget password? ">
-                                            <color key="titleColor" red="0.82352941176470584" green="0.25490196078431371" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="forget_password:" destination="83I-7v-ej6" eventType="touchUpInside" id="Y8D-ZL-CaZ"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-Fc-aaD">
+                                <rect key="frame" x="30" y="533" width="123" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="z10-aA-OQe"/>
+                                </constraints>
+                                <state key="normal" title="forget password? ">
+                                    <color key="titleColor" red="0.82352941176470584" green="0.25490196078431371" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forget_password:" destination="83I-7v-ej6" eventType="touchUpInside" id="Y8D-ZL-CaZ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbk-jW-OJA" customClass="CustomBtn" customModule="Teer" customModuleProvider="target">
                                 <rect key="frame" x="30" y="782" width="354" height="60"/>
                                 <constraints>
@@ -88,10 +91,12 @@
                             <constraint firstItem="twv-iO-Lf5" firstAttribute="trailing" secondItem="fnC-kT-TcT" secondAttribute="trailing" constant="30" id="OPo-b3-LeD"/>
                             <constraint firstItem="fnC-kT-TcT" firstAttribute="leading" secondItem="twv-iO-Lf5" secondAttribute="leading" constant="30" id="Qd9-QD-xzD"/>
                             <constraint firstItem="twv-iO-Lf5" firstAttribute="bottom" secondItem="Lbk-jW-OJA" secondAttribute="bottom" constant="20" id="SSv-gr-WkZ"/>
+                            <constraint firstItem="n3R-Fc-aaD" firstAttribute="top" secondItem="fnC-kT-TcT" secondAttribute="bottom" constant="20" id="WWD-Dd-m8g"/>
                             <constraint firstItem="ea7-5y-Qpc" firstAttribute="centerX" secondItem="ma2-y1-kjf" secondAttribute="centerX" id="iPF-IK-aDj"/>
                             <constraint firstItem="fnC-kT-TcT" firstAttribute="top" secondItem="EyW-wp-CVw" secondAttribute="bottom" constant="12" id="jYH-9M-ef4"/>
                             <constraint firstItem="twv-iO-Lf5" firstAttribute="trailing" secondItem="Lbk-jW-OJA" secondAttribute="trailing" constant="30" id="leV-0h-D2O"/>
                             <constraint firstAttribute="bottom" secondItem="cvy-i0-1zW" secondAttribute="bottom" id="mE3-4z-Gfw"/>
+                            <constraint firstItem="n3R-Fc-aaD" firstAttribute="leading" secondItem="twv-iO-Lf5" secondAttribute="leading" constant="30" id="mhG-Xd-Ofh"/>
                             <constraint firstItem="Lbk-jW-OJA" firstAttribute="centerX" secondItem="ma2-y1-kjf" secondAttribute="centerX" id="oah-LS-27A"/>
                             <constraint firstItem="cvy-i0-1zW" firstAttribute="trailing" secondItem="twv-iO-Lf5" secondAttribute="trailing" id="oh6-an-8NE"/>
                             <constraint firstItem="EyW-wp-CVw" firstAttribute="top" secondItem="ea7-5y-Qpc" secondAttribute="bottom" constant="10.5" id="quR-5R-4kl"/>

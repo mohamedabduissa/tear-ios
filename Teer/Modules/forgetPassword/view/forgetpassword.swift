@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MOLH
 class forgetpassword: UIViewController {
 
     
@@ -16,6 +16,8 @@ class forgetpassword: UIViewController {
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var forgetDES: UILabel!
     @IBOutlet weak var nextBTN: UIButton!
+    
+    @IBOutlet weak var back: UIButton!
     let presenter = forget_password_presenter(loginModel: forget_password_model())
     let toastMessage = ToastMessages()
     var phone_number: String?
@@ -35,8 +37,14 @@ class forgetpassword: UIViewController {
         phone.placeholder = "phone".localize
         presenter.setVCDelegate(vcDelegate: self)
         phone.delegate = self
+        if  MOLHLanguage.isArabic(){
+                   self.back.transform = self.back.transform.rotated(by: CGFloat(Double.pi))
+               }
     }
     
+    @IBAction func backBTN(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func nextBTN_tapped(_ sender: Any) {
         

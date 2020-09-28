@@ -139,6 +139,7 @@
                                             <constraint firstItem="Fft-35-Xgm" firstAttribute="leading" secondItem="rEz-ov-3SK" secondAttribute="leading" id="Vou-TE-5Qm"/>
                                             <constraint firstItem="Fft-35-Xgm" firstAttribute="top" secondItem="rEz-ov-3SK" secondAttribute="top" id="YPy-GX-360"/>
                                             <constraint firstItem="Fft-35-Xgm" firstAttribute="trailing" secondItem="rEz-ov-3SK" secondAttribute="trailing" constant="414" id="Ypk-Kr-kQh"/>
+                                            <constraint firstItem="Fft-35-Xgm" firstAttribute="width" secondItem="mLP-Xw-rmT" secondAttribute="width" id="bqC-gm-DB1"/>
                                             <constraint firstItem="mLP-Xw-rmT" firstAttribute="bottom" secondItem="Fft-35-Xgm" secondAttribute="bottom" id="feY-l0-w3Y"/>
                                             <constraint firstItem="Fft-35-Xgm" firstAttribute="height" secondItem="mLP-Xw-rmT" secondAttribute="height" constant="450" id="kJJ-81-3eO"/>
                                             <constraint firstItem="Fft-35-Xgm" firstAttribute="top" secondItem="gNq-Vt-EFM" secondAttribute="top" id="msh-yv-CgY"/>

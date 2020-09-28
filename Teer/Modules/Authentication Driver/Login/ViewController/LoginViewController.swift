@@ -21,9 +21,10 @@ class LoginViewController: UIViewController, LoginVCProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         phone.roundAndShodowTextField()
         password.roundAndShodowTextField()
-        self.listen2Keyboard(withView: self.login)
+//        self.listen2Keyboard(withView: self.login)
         if  MOLHLanguage.isArabic(){
             self.phone.textAlignment = .right
             self.password.textAlignment = .right
@@ -128,4 +129,15 @@ extension LoginViewController: UITextFieldDelegate{
         view.endEditing(true)
         return false
     }
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        // do someting...
+    }
+
 }

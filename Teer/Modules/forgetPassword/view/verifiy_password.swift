@@ -7,13 +7,15 @@
 //
 
 import UIKit
-
+import MOLH
 class verifiy_password: UIViewController {
 
     @IBOutlet weak var forget_LBL: UILabel!
     @IBOutlet weak var verifiy_text: UITextField!
     @IBOutlet weak var verifiy_lbl: UILabel!
     @IBOutlet weak var nextBTN: UIButton!
+    
+    @IBOutlet weak var back: UIButton!
     var  toastMessage = ToastMessages()
     var code: Int?
     var phone: String?
@@ -35,8 +37,15 @@ class verifiy_password: UIViewController {
         nextBTN.layer.cornerRadius = 10
         nextBTN.layer.masksToBounds = true
         verifiy_text.delegate = self
+        if  MOLHLanguage.isArabic(){
+                   self.back.transform = self.back.transform.rotated(by: CGFloat(Double.pi))
+        }
     }
-
+    
+    @IBAction func backBTN(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func nextBTN_tapped(_ sender: Any) {
         validate_data()
     }

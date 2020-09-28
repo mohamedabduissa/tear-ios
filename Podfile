@@ -18,5 +18,7 @@ target 'Teer' do
   pod 'Firebase/Firestore'
   pod 'MBRadioCheckboxButton'
   pod 'MOLH'
+  pod 'ReachabilitySwift'
+
 
 end

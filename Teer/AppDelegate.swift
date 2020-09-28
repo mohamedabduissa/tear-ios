@@ -10,25 +10,127 @@ import UIKit
 import CoreData
 import Firebase
 import MOLH
-
+import Reachability
 @available(iOS 9.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,MOLHResetable {
     
     var window: UIWindow?
-    
+    var reachability: Reachability?
+    let hostNames = [nil, "google.com", "invalidhost"]
+    var hostIndex = 0
+    let toastMessage = ToastMessages()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
         let pushManager = PushNotificationManager()
           pushManager.registerForPushNotifications()
 
           FirebaseApp.configure()
 
-        MOLHLanguage.setDefaultLanguage("ar")
+        MOLHLanguage.setDefaultLanguage(MOLHLanguage.currentAppleLanguage())
+        
         MOLH.shared.activate(true)
         
+        startHost(at: 0)
+
         return true
     }
+    
+    
+    func startHost(at index: Int) {
+        stopNotifier()
+        setupReachability(hostNames[index], useClosures: true)
+        startNotifier()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.startHost(at: (index + 1) % 3)
+        }
+    }
+    
+    func setupReachability(_ hostName: String?, useClosures: Bool) {
+        let reachability: Reachability?
+        if let hostName = hostName {
+            reachability = try? Reachability(hostname: hostName)
+            //                    hostNameLabel.text = hostName
+            print("host name \(hostName)")
+        } else {
+            reachability = try? Reachability()
+            print(" no host name ")
+            
+            //                    hostNameLabel.text = "No host name"
+        }
+        self.reachability = reachability
+        print("--- set up with host name:")
+        
+        if useClosures {
+            reachability?.whenReachable = { reachability in
+                self.updateLabelColourWhenReachable(reachability)
+            }
+            reachability?.whenUnreachable = { reachability in
+                self.updateLabelColourWhenNotReachable(reachability)
+            }
+        } else {
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(reachabilityChanged(_:)),
+                name: .reachabilityChanged,
+                object: reachability
+            )
+        }
+    }
+    
+    func startNotifier() {
+        print("--- start notifier")
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("Unable to start\nnotifier")
+            return
+        }
+    }
+    
+    func stopNotifier() {
+        print("--- stop notifier")
+        reachability?.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: nil)
+        reachability = nil
+    }
+    
+    func updateLabelColourWhenReachable(_ reachability: Reachability) {
+        print("\(reachability.description) - \(reachability.connection)")
+        if reachability.connection == .wifi {
+            //                    self.networkStatus.textColor = .green
+        } else {
+            //                    self.networkStatus.textColor = .blue
+        }
+        
+        //                toastMessage.createToastMessage("connected")
+        //                self.networkStatus.text = "\(reachability.connection)"
+    }
+    
+    func updateLabelColourWhenNotReachable(_ reachability: Reachability) {
+        print("connnecti\(reachability.description) - \(reachability.connection)")
+        
+        //                self.networkStatus.textColor = .red
+        toastMessage.createToastMessage("connection error please check your connection")
+        
+        print("\(reachability.connection)")
+        //                self.networkStatus.text = "\(reachability.connection)"
+    }
+    
+    @objc func reachabilityChanged(_ note: Notification) {
+        let reachability = note.object as! Reachability
+        
+        if reachability.connection != .unavailable {
+            updateLabelColourWhenReachable(reachability)
+        } else {
+            updateLabelColourWhenNotReachable(reachability)
+        }
+    }
+    
+    deinit {
+        reachability?.stopNotifier()
+}
     func reset() {
          let stry = UIStoryboard(name: "Main", bundle: nil)
            window?.rootViewController = stry.instantiateInitialViewController()
@@ -148,4 +250,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MOLHResetable {
 
       completionHandler(UIBackgroundFetchResult.newData)
     }
+    
+    
 }

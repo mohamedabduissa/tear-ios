@@ -37,11 +37,11 @@ class ChangeLanguageViewController: UIViewController {
     }
     
     @IBAction func saveBtnDidTapped(_ sender: Any) {
-        
+        print("hamada")
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
         MOLH.reset(transition: .transitionCrossDissolve, duration: 0.25)
         MOLH.reset()
-        print("hamada")
+        
         
     }
     @IBAction func arbicLangaugeBtnDidTapped(_ sender: Any) {

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Reachability
 
 @available(iOS 10.0, *)
 class ViewController: UIViewController {
+   
 
     override func viewDidAppear(_ animated: Bool) {
         NetworkManager.instance.observeReachability(true)
@@ -52,17 +54,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-//    func resetRoot() {
-//          let storyBoard : UIStoryboard = UIStoryboard(name: "DeliveryStatus", bundle:nil)
-//           let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! UIViewController
-//           let navigationController = UINavigationController(rootViewController: nextViewController)
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.layoutIfNeeded()
-//           UIApplication.shared.windows.first?.rootViewController = navigationController
-//           UIApplication.shared.windows.first?.makeKeyAndVisible()
-//    }
-
+        
+        
+            }
+            
 }
+
+

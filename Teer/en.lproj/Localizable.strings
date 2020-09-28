@@ -50,3 +50,5 @@
 "message_title" = "message title";
 "message_type" = "message type";
 "code_Not_match" = "code not match";
+"notifications" = "notifications";
+"about_app" = "about application";

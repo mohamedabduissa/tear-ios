@@ -63,7 +63,6 @@
 		5289BEF12478ECBA00CC5D08 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289BEF02478ECBA00CC5D08 /* LoginPresenter.swift */; };
 		5289BEF32478ED5600CC5D08 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289BEF22478ED5600CC5D08 /* LoginModel.swift */; };
 		5289BEF52478F1FE00CC5D08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289BEF42478F1FE00CC5D08 /* LoginViewController.swift */; };
-		5289BEFA2479074200CC5D08 /* ChooseLanguage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5289BEF92479074200CC5D08 /* ChooseLanguage.xib */; };
 		5289BEFF2479160700CC5D08 /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289BEFE2479160700CC5D08 /* LanguageController.swift */; };
 		5289BF0124792F7800CC5D08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5289BF0024792F7800CC5D08 /* Main.storyboard */; };
 		5289BF032479306300CC5D08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289BF022479306300CC5D08 /* ViewController.swift */; };
@@ -83,6 +82,8 @@
 		85743641250E9D6000200DD6 /* forget_password_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85743640250E9D6000200DD6 /* forget_password_model.swift */; };
 		85743643250E9FA000200DD6 /* vifiry_code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85743642250E9FA000200DD6 /* vifiry_code.swift */; };
 		85743645250EAE6A00200DD6 /* indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85743644250EAE6A00200DD6 /* indicator.swift */; };
+		857E2184252232DF00A4A568 /* ChangeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857E2183252232DE00A4A568 /* ChangeLanguageViewController.swift */; };
+		857E21852522335900A4A568 /* ChooseLanguage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857E21872522335900A4A568 /* ChooseLanguage.xib */; };
 		85A7F5DC25136FA2004C78E3 /* verifiy_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F5DB25136FA2004C78E3 /* verifiy_password.swift */; };
 		85A7F5DE25136FB6004C78E3 /* new_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F5DD25136FB6004C78E3 /* new_password.swift */; };
 		85BDB0F0250A3AE10051E1A6 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BDB0EE250A3ADE0051E1A6 /* AlertController.swift */; };
@@ -116,7 +117,6 @@
 		A8F60FD324991056003BEEC9 /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F60FD224991055003BEEC9 /* TermsAndConditions.swift */; };
 		A8F60FD5249910FE003BEEC9 /* TermsAndConditionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F60FD4249910FE003BEEC9 /* TermsAndConditionsModel.swift */; };
 		A8F60FD7249914DB003BEEC9 /* TermsAndConditionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F60FD6249914DB003BEEC9 /* TermsAndConditionsPresenter.swift */; };
-		A8F60FDC24992EA4003BEEC9 /* ChangeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F60FDB24992EA4003BEEC9 /* ChangeLanguageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -181,7 +181,6 @@
 		5289BEF02478ECBA00CC5D08 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		5289BEF22478ED5600CC5D08 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5289BEF42478F1FE00CC5D08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		5289BEF92479074200CC5D08 /* ChooseLanguage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseLanguage.xib; sourceTree = "<group>"; };
 		5289BEFB247912EC00CC5D08 /* ArbFONTS-Cairo-Regular-1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ArbFONTS-Cairo-Regular-1.ttf"; sourceTree = "<group>"; };
 		5289BEFE2479160700CC5D08 /* LanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageController.swift; sourceTree = "<group>"; };
 		5289BF0024792F7800CC5D08 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -203,6 +202,9 @@
 		85743640250E9D6000200DD6 /* forget_password_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forget_password_model.swift; sourceTree = "<group>"; };
 		85743642250E9FA000200DD6 /* vifiry_code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vifiry_code.swift; sourceTree = "<group>"; };
 		85743644250EAE6A00200DD6 /* indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = indicator.swift; sourceTree = "<group>"; };
+		857E2183252232DE00A4A568 /* ChangeLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLanguageViewController.swift; sourceTree = "<group>"; };
+		857E21862522335900A4A568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChooseLanguage.xib; sourceTree = "<group>"; };
+		857E21892522336600A4A568 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ChooseLanguage.strings; sourceTree = "<group>"; };
 		85A7F5DB25136FA2004C78E3 /* verifiy_password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifiy_password.swift; sourceTree = "<group>"; };
 		85A7F5DD25136FB6004C78E3 /* new_password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new_password.swift; sourceTree = "<group>"; };
 		85BDB0EE250A3ADE0051E1A6 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -246,7 +248,6 @@
 		A8F60FD224991055003BEEC9 /* TermsAndConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
 		A8F60FD4249910FE003BEEC9 /* TermsAndConditionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsModel.swift; sourceTree = "<group>"; };
 		A8F60FD6249914DB003BEEC9 /* TermsAndConditionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsPresenter.swift; sourceTree = "<group>"; };
-		A8F60FDB24992EA4003BEEC9 /* ChangeLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageViewController.swift; sourceTree = "<group>"; };
 		F0E71E8C22FFE72BD61113B9 /* Pods-Teer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teer.debug.xcconfig"; path = "Target Support Files/Pods-Teer/Pods-Teer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -692,7 +693,6 @@
 			children = (
 				A8445FFD249A587C00E0ACC2 /* ChangeLanguage.storyboard */,
 				A8F60FDA24992E71003BEEC9 /* ViewController */,
-				5289BEF92479074200CC5D08 /* ChooseLanguage.xib */,
 				5289BEFE2479160700CC5D08 /* LanguageController.swift */,
 			);
 			path = "Change Language";
@@ -882,7 +882,8 @@
 		A8F60FDA24992E71003BEEC9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A8F60FDB24992EA4003BEEC9 /* ChangeLanguageViewController.swift */,
+				857E21872522335900A4A568 /* ChooseLanguage.xib */,
+				857E2183252232DE00A4A568 /* ChangeLanguageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -948,6 +949,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				857E21852522335900A4A568 /* ChooseLanguage.xib in Resources */,
 				A8445FE9249A568200E0ACC2 /* Login.storyboard in Resources */,
 				524770652476221500B8991E /* splash.png in Resources */,
 				5247705C247620D000B8991E /* LaunchScreen.storyboard in Resources */,
@@ -965,7 +967,6 @@
 				A8609A7E249B8720003EEC81 /* Localizable.strings in Resources */,
 				A8445FDF249A557000E0ACC2 /* TermsAndConditions.storyboard in Resources */,
 				521BF53B249D8AE000A282A4 /* ContactUs.storyboard in Resources */,
-				5289BEFA2479074200CC5D08 /* ChooseLanguage.xib in Resources */,
 				A867334D249EB4BD008769D0 /* Profile.storyboard in Resources */,
 				A844600C249A5A0200E0ACC2 /* Notifications.storyboard in Resources */,
 				8574363B250E932100200DD6 /* forgetPassword.storyboard in Resources */,
@@ -1070,7 +1071,6 @@
 				A8AC50A32492982600950B6B /* ChangeOrderStatusModel.swift in Sources */,
 				5241004E249053CD00FD2DDD /* NotificationsPresenter.swift in Sources */,
 				5289BEDF2478D76D00CC5D08 /* LoginResponse.swift in Sources */,
-				A8F60FDC24992EA4003BEEC9 /* ChangeLanguageViewController.swift in Sources */,
 				85A7F5DC25136FA2004C78E3 /* verifiy_password.swift in Sources */,
 				8574363D250E935B00200DD6 /* forgetpassword.swift in Sources */,
 				35201DD1247BFE7400DF3ED6 /* DeliveryStatusPresenter.swift in Sources */,
@@ -1082,6 +1082,7 @@
 				A8EB286D24905DCE001EBFB7 /* RoundView.swift in Sources */,
 				35072AA6247BDBA9007EFADC /* DeliveryStatusViewController.swift in Sources */,
 				5241003F249005D000FD2DDD /* Logout.swift in Sources */,
+				857E2184252232DF00A4A568 /* ChangeLanguageViewController.swift in Sources */,
 				356C2370247964FC007C23F5 /* RoundTextFieldExtension.swift in Sources */,
 				5226EF71247CF43000120720 /* ToastMessages.swift in Sources */,
 				5229653124991A7900AEDDF0 /* ProfileResponse.swift in Sources */,
@@ -1149,6 +1150,15 @@
 				52F52AE7249F1052003A2DFB /* ar */,
 			);
 			name = OrdersHistory.storyboard;
+			sourceTree = "<group>";
+		};
+		857E21872522335900A4A568 /* ChooseLanguage.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				857E21862522335900A4A568 /* Base */,
+				857E21892522336600A4A568 /* ar */,
+			);
+			name = ChooseLanguage.xib;
 			sourceTree = "<group>";
 		};
 		A8445FE1249A557000E0ACC2 /* TermsAndConditions.storyboard */ = {
@@ -1368,7 +1378,7 @@
 				CODE_SIGN_ENTITLEMENTS = Teer/Teer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = Teer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1376,7 +1386,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.Teer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1393,7 +1403,7 @@
 				CODE_SIGN_ENTITLEMENTS = Teer/Teer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = TBYZE4288M;
 				INFOPLIST_FILE = Teer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1401,7 +1411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fudex.Teer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

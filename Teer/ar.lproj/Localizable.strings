@@ -50,3 +50,5 @@
 "message_title" = "عنوان الرساله";
 "message_type" = "نوع الرساله";
 "code_Not_match" = "الكود غير صحيح";
+"notifications" = "الاشعارات";
+"about_app" = "عن التطبيق";

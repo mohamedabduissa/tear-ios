@@ -20,6 +20,9 @@ class LanguageController: UIViewController {
     @IBOutlet weak var flage: UIButton!
     
     
+    @IBOutlet weak var lb: UILabel!
+    
+    
     @IBOutlet weak var containerView: UIView!
     
     
@@ -45,8 +48,13 @@ class LanguageController: UIViewController {
         //nextViewController.modalTransitionStyle = .flipHorizontal
         self.present(nextViewController, animated:true, completion:nil)
     }
+    
     override func viewDidLoad() {
+//        chooseLanguageDropDown.inputView = UIView()
+
+       
         flage.imageView?.contentMode = .scaleToFill
+        chooseLanguageDropDown.delegate = self
         containerView.layer.cornerRadius = 10
         containerView.layer.masksToBounds = true
         containerView.layer.borderWidth = 1.0
@@ -57,9 +65,16 @@ class LanguageController: UIViewController {
           //Its Id Values and its optional
           //messageDropDown.optionIds = [1,23,54,22]
        // flage.imageView?.contentMode = UIView.ContentMode.scaleToFill
-
+        if MOLHLanguage.currentAppleLanguage() == "ar"{
             chooseLanguageDropDown.text = "عربي"
             flage.setImage(UIImage(named: "ar_flag"), for: .normal)
+        }
+           
+        else if MOLHLanguage.currentAppleLanguage() == "en"{
+            chooseLanguageDropDown.text = "English"
+            flage.setImage(UIImage(named: "en_flag"), for: .normal)
+        }
+            
 //
           chooseLanguageDropDown.optionImageArray = ["ar_flag","en_flag"]
           chooseLanguageDropDown.didSelect{(selectedText , index ,id) in
@@ -74,6 +89,8 @@ class LanguageController: UIViewController {
             }
            
     }
+        
+//        self.listen2Keyboard(withView: containerView)
     }
     override init(nibName : String?, bundle : Bundle?) {
         
@@ -82,5 +99,18 @@ class LanguageController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+   
     
+}
+extension LanguageController : UITextFieldDelegate{
+   
+      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          self.view.endEditing(true)
+          return false
+      }
+      func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+    
+            return false
+          }
+
 }

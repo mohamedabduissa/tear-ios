@@ -362,6 +362,7 @@ PODS:
   - ObjectMapper (4.2.0)
   - PromisesObjC (1.2.10)
   - Protobuf (3.13.0)
+  - ReachabilitySwift (5.0.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -376,6 +377,7 @@ DEPENDENCIES:
   - MBRadioCheckboxButton
   - MOLH
   - ObjectMapper
+  - ReachabilitySwift
   - SwiftyJSON
 
 SPEC REPOS:
@@ -408,6 +410,7 @@ SPEC REPOS:
     - ObjectMapper
     - PromisesObjC
     - Protobuf
+    - ReachabilitySwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -439,8 +442,9 @@ SPEC CHECKSUMS:
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 903390051bdb31fc1891d28295ebb04ae93869c4
+PODFILE CHECKSUM: a13aec9ca9a67e0b8adb2758970b4de2f6e5d00b
 
 COCOAPODS: 1.9.3

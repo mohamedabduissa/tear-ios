@@ -109,8 +109,10 @@ class SideItems{
         let favourite = SideItems(type: .personalData, imageName: "user")
         let appTerms = SideItems(type: .termsOfService, imageName: "contract")
         let contactUs = SideItems(type: .contactUs, imageName: "ContactUs")
-        
-        return [main, search, myads, favourite, profile, appTerms, contactUs, logout]
+        let notifications = SideItems(type: .notifications, imageName: "bell")
+        let processing = SideItems(type: .processing, imageName: "tracking")
+        let delivered = SideItems(type: .delivered, imageName: "contract")
+        return [main,notifications,processing , delivered,search, myads, favourite, profile, appTerms, contactUs, logout]
         
     }
 }
@@ -124,7 +126,10 @@ enum SideType {
     case home
     case personalData
     case orderHistory
-    
+    case notifications
+    case processing
+    case delivered
+    case about_app
     var localized: String {
         switch self {
         case .home:
@@ -143,6 +148,14 @@ enum SideType {
             return "Logout".localize
         case .orderHistory:
             return "Orders History".localize
+        case .notifications:
+            return "notifications".localize
+        case .processing:
+            return "processing".localize
+        case .delivered:
+            return "complete".localize
+        case .about_app:
+            return "about_app".localize
         }
     }
 }
@@ -168,6 +181,14 @@ extension SideMenuTableViewController: UITableViewDelegate{
             handleContactUs()
         case .logout:
             handleLogout()
+        case .notifications:
+            handleNotification()
+        case .processing:
+            handle_underprocessing()
+        case .delivered:
+            handle_delivered()
+        case .about_app:
+            print("no thing to  show")
         }
         prepareNavigationStyle()
     }
@@ -176,7 +197,20 @@ extension SideMenuTableViewController: UITableViewDelegate{
        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
         self.present(view, animated: true, completion: nil)
     }
-    
+    private func handle_bout_app() {
+          let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
+           self.present(view, animated: true, completion: nil)
+       }
+    private func handle_underprocessing() {
+     let view = UIStoryboard(name: "OrdersHistory", bundle: nil).instantiateViewController(withIdentifier: "OrdersHistoryVC") as! DeliveryStatusViewController
+        view.prossing = true
+       self.present(view, animated: true, completion: nil)
+    }
+    private func handle_delivered() {
+     let view = UIStoryboard(name: "OrdersHistory", bundle: nil).instantiateViewController(withIdentifier: "OrdersHistoryVC") as! DeliveryStatusViewController
+        view.complete_orders = true
+       self.present(view, animated: true, completion: nil)
+    }
     private func handleOrderHistory() {
         let view = UIStoryboard(name: "OrdersHistory", bundle: nil).instantiateViewController(withIdentifier: "OrdersHistoryVC") as! DeliveryStatusViewController
         self.present(view, animated: true, completion: nil)
@@ -191,7 +225,10 @@ extension SideMenuTableViewController: UITableViewDelegate{
         let view = UIStoryboard(name: "ContactUs", bundle: nil).instantiateViewController(withIdentifier: "ContactUs") as! ContactUsViewController
         self.present(view, animated: true, completion: nil)
     }
-    
+    private func handleNotification() {
+            let view = UIStoryboard(name: "Notifications", bundle: nil).instantiateViewController(withIdentifier: "Notifications") as! NotificationsTableVC
+                self.present(view, animated: true, completion: nil)
+       }
     private func handleTermsOfService() {
         let view = UIStoryboard(name: "TermsAndConditions", bundle: nil).instantiateViewController(withIdentifier: "TermsAndConditions") as! TermsAndConditions
         self.present(view, animated: true, completion: nil)

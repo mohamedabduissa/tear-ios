@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import MOLH
 class new_password: UIViewController {
 
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirm_password: UITextField!
     @IBOutlet weak var save: UIButton!
+    
+    @IBOutlet weak var back: UIButton!
+    
     var presenter = new_password_presenter(loginModel: forget_password_model())
     var code: Int?
     var phone: String?
@@ -37,8 +40,15 @@ class new_password: UIViewController {
         presenter.setVCDelegate(vcDelegate: self)
         password.delegate = self
         confirm_password.delegate = self
+        if  MOLHLanguage.isArabic(){
+            self.back.transform = self.back.transform.rotated(by: CGFloat(Double.pi))
+        }
     }
 
+    
+    @IBAction func backBTN(_ sender: Any) {
+     dismiss(animated: true, completion: nil)
+    }
     @IBAction func saveBTN_tapped(_ sender: Any) {
         validate_data()
 //        self.presenter.verifiy()

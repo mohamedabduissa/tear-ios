@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "لغة التطبيق"; ObjectID = "dZ0-ql-Pf6"; */
+"dZ0-ql-Pf6.text" = "لغة التطبيق";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "iQJ-kD-4Db"; */
+"iQJ-kD-4Db.normalTitle" = "التالي";
+
+/* Class = "UILabel"; text = "يرجى إختيار لغة التطبيق ما بين الخيارات المتاحة"; ObjectID = "yke-Sf-yrR"; */
+"yke-Sf-yrR.text" = "يرجى إختيار لغة التطبيق ما بين الخيارات المتاحة";
