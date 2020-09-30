@@ -62,7 +62,7 @@ class OrdersHistoryPresenter {
         self.ordersHistoryModel.getAllOrdersHistoryByStatus(url: ordersURL, completion: {error , ordersHistory in
                 if ordersHistory != nil && ordersHistory?.count != 0 {
                     
-                    self.ordersHistoryList = ordersHistory!
+                    self.ordersHistoryList = ordersHistory!.reversed()
                     self.ordersHistoryDelegate?.getOrdersHistorySucces()
                 }
                 else{
@@ -75,6 +75,8 @@ class OrdersHistoryPresenter {
     
     func getAllOrdersHistoryCount()-> Int
     {
+        print("count\(ordersHistoryList.count)")
+
         return ordersHistoryList.count
 
 
@@ -96,6 +98,7 @@ class OrdersHistoryPresenter {
         cell.orderNumber.text = "#" + "\(String(describing: currentOrder.key!))"
         cell.name.text = currentOrder.clientName
         cell.address.text = currentOrder.address
+        cell.address.sizeToFit()
         cell.orderCost.text = currentOrder.price
         cell.orderCost.text?.append(contentsOf: " SAR".localize)
         cell.orderStatus.text = "\(String(describing: currentOrder.status!))".localize + " at ".localize + "\(String(describing: currentOrder.deliverDate!))"
@@ -114,6 +117,7 @@ class OrdersHistoryPresenter {
             currentOrder = filterd[index]
             
         }
+        CurrentOrdersResponse.save(currentOrder.key!)
         return  currentOrder.key!
         
     }

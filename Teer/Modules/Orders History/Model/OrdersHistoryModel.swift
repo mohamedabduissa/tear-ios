@@ -168,10 +168,10 @@ class OrdersHistoryModel{
                                      "Authorization": "Bearer "+"\(CodeHelper.getCurrentUserToken())"]
        
         Indicator.sharedInstance.showIndicator()
-
+print("ttttttttt\(CodeHelper.getCurrentUserToken())")
         AF.request(url, method: .get, parameters: nil, encoding : JSONEncoding.default, headers:headers).responseJSON { (response) in
             Indicator.sharedInstance.hideIndicator()
-
+print("urllll\(url)")
             if response.response?.statusCode == 200{
                 print(response)
             }
@@ -197,6 +197,7 @@ class OrdersHistoryModel{
                     //ordersHistory.append(currentOrder)
                     
                 }
+                print("orderHistory\(ordersHistory.count)")
                 completion(nil,ordersHistory)
                 //   print(currentOrdersList[0].key)
             }

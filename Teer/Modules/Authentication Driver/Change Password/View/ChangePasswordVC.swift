@@ -24,18 +24,27 @@ class ChangePasswordVC: UIViewController, ChangePassVCProtocol {
         oldPassword.roundAndShodowTextField()
         newPassword.roundAndShodowTextField()
         confirmNewPassword.roundAndShodowTextField()
+        hideKeyboardWhenTappedAround()
+        oldPassword.delegate = self
+        confirmNewPassword.delegate = self
+        newPassword.delegate = self
         if  MOLHLanguage.isArabic(){
                       self.backBtnImage.transform = self.backBtnImage.transform.rotated(by: CGFloat(Double.pi))
+            oldPassword.textAlignment = .right
+            newPassword.textAlignment = .right
+            confirmNewPassword.textAlignment = .right
                }
-        self.listen2Keyboard(withView: self.save)
+//        self.listen2Keyboard(withView: self.save)
     }
     override func viewWillAppear(_ animated: Bool) {
         presenter.setVCDelegate(vcDelegate: self)
     }
     
     @IBAction func onBackTapped(_ sender: Any) {
-        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
-        self.present(view, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+
+//        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
+//        self.present(view, animated: true, completion: nil)
     }
     
     @IBAction func onSaveTapped(_ sender: Any) {
@@ -54,4 +63,22 @@ class ChangePasswordVC: UIViewController, ChangePassVCProtocol {
         func showAlert(msg: String) {
             toastMessage.createToastMessage(msg)
         }
+}
+
+
+extension ChangePasswordVC: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           view.endEditing(true)
+           return false
+       }
+    func hideKeyboardWhenTappedAround() {
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+         tap.cancelsTouchesInView = false
+         view.addGestureRecognizer(tap)
+     }
+     
+     @objc func dismissKeyboard() {
+    view.endEditing(true)
+         // do someting...
+     }
 }

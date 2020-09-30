@@ -12,19 +12,24 @@ import SwiftyJSON
 class RetrieveingOrderModel{
     let retrieveingOrderURL =  URL(string: CodeHelper.APIBaseUrl+"change/\(CurrentOrdersResponse.getOrderNumber())/status")!
          
-       func submitRetrieveingOrderReason(retrieveingReason:String,completion: @escaping (String?) -> Void) {
+    func submitRetrieveingOrderReason(retrieveingReason:String, status: String,completion: @escaping (String?) -> Void) {
              let headers : HTTPHeaders = ["Content-Type": "application/json",
                                           "Accept": "application/json",
                                           "Authorization": "Bearer "+CodeHelper.getCurrentUserToken()]
              print("dddd",CodeHelper.getCurrentUserToken())
+        print("getOreder\(CurrentOrdersResponse.getOrderNumber())")
+        print("dddddddd\(CurrentOrdersResponse.getOrderNumber())")
            let parameters: [String: String] = [
-               "status" : "cancel",
+               "status" : "\(status)",
                "cancelReson" : retrieveingReason
                
            ]
+        Indicator.sharedInstance.showIndicator()
 
              AF.request(retrieveingOrderURL, method: .post, parameters: parameters, encoding : JSONEncoding.default, headers: headers).responseJSON { (response) in
                  print("url \(self.retrieveingOrderURL)")
+                Indicator.sharedInstance.hideIndicator()
+
                  if response.response?.statusCode == 200{
                      print("response \(response)")
                  }

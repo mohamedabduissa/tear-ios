@@ -53,7 +53,7 @@ class OrdersSearchPresenter {
         cell.name.text = currentOrder.clientName
         cell.address.text = currentOrder.address
         cell.orderCost.text = currentOrder.price
-        cell.orderCost.text?.append(contentsOf: " SAR".localize)
+//        cell.orderCost.text?.append(contentsOf: " SAR".localize)
         cell.orderStatus.text = "\(String(describing: currentOrder.status!))".localize + " at ".localize + "\(String(describing: currentOrder.deliverDate!))"
         
       }

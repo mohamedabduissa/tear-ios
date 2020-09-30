@@ -55,6 +55,7 @@ class CurrentOrdersPresenter {
     {
         let currentOrder : CurrentOrdersResponse
         currentOrder = currentOrdersList[index]
+        print("currentOrder\(currentOrder.key)")
         return "\(currentOrder.key)"
         
     }

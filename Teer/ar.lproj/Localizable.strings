@@ -52,3 +52,7 @@
 "code_Not_match" = "الكود غير صحيح";
 "notifications" = "الاشعارات";
 "about_app" = "عن التطبيق";
+"order_complete" = "هل تم تسليم الطلب ؟";
+"complete_reason" = "اكتب تعلقياً";
+"retrieved" = "مسترجع";
+"no_internet" = "تم قطع الاتصال بالانترنت";

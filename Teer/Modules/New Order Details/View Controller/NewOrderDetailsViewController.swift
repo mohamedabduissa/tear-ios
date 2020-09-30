@@ -47,9 +47,12 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
     let toastMessage = ToastMessages()
     var status : String?
     var clientPhoneNumber : String?
+    var view_type = ""
     @IBOutlet weak var newOrderDeliveryViewHeightConstrain: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
+        orderReceviedGrayView.isHidden = true
+        orderReceviedGreenMarkImageView.isHidden = false
         changeOrderStatusPresenter.setVCDelegate(vcDelegate: self)
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.callBtnDidTapped (_:)))
         callView.addGestureRecognizer(gesture)
@@ -96,14 +99,18 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
     
 
       @objc func callBtnDidTapped(_ sender:UITapGestureRecognizer){
-        guard let url = URL(string: "tel://\(01153364588)") else {
+        if let  number = clientPhoneNumber {
+        guard let url = URL(string: "tel://\(number)") else {
         return //be safe
         }
+        
+
 
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
+        }
         }
       }
     func displayOrderData(_ order: (orderNo: Int, name: String, phone: String, address: String, price: String, clientName: String, status: String, receivedAtTime: String, startedAtTime: String, finishedAtTime: String, time: String)) {
@@ -122,14 +129,23 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
         
     }
     @IBAction func backBtnDidTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-//        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
-//               self.present(view, animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+//        print("view_type\(view_type)")
+        if view_type == "table_view"{
+            let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
+                self.present(view, animated: true, completion: nil)
+        }
+        else if view_type == "collection_view"{
+            let view = UIStoryboard(name: "OrdersHistory", bundle: nil).instantiateViewController(withIdentifier: "OrdersHistoryVC") as! DeliveryStatusViewController
+            self.present(view, animated: true, completion: nil)
+        }
+
+       
     }
     
     @IBAction func informationBtnDidTapped(_ sender: Any) {
         let view = UIStoryboard(name: "NewOrderDetails", bundle: nil).instantiateViewController(withIdentifier: "RetrieveingOrderViewController") as! RetrieveingOrderViewController
-               
+        view.status = "cancel"
         self.present(view, animated: true, completion: nil)
         
     }
@@ -138,18 +154,27 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
         switch status {
         case "new":
             changeOrderStatusBtn.setTitle("accept order".localize, for: .normal)
-            orderReceviedGrayView.isHidden = true
-            orderReceviedGreenMarkImageView.isHidden = false
+ 
+        case "accept":
+            changeOrderStatusBtn.setTitle("Start Journey".localize, for: .normal)
+//            startJourneyGreenMarkImageView.isHidden  = false
+//            startJourneyGrayView.isHidden = true
         case "processing":
-   changeOrderStatusBtn.setTitle("Start Journey".localize, for: .normal)
-//            changeOrderStatusBtn.setTitle("order Deliverd".localize, for: .normal)
-            startJourneyGreenMarkImageView.isHidden  = false
+//
             startJourneyGrayView.isHidden = true
+            startJourneyGreenMarkImageView.isHidden  = false
+//            startJourneyGrayView.isHidden = true changeOrderStatusBtn.setTitle("complete".localize, for: .normal)
+            changeOrderStatusBtn.setTitle("order Deliverd".localize, for: .normal)
+   orderReceviedGrayView.isHidden = true
+              orderReceviedGreenMarkImageView.isHidden = false
+
             orderReceviedGrayView.isHidden = true
             orderReceviedGreenMarkImageView.isHidden = false
             informationButton.isEnabled = false
         case "complete":
         changeOrderStatusBtn.setTitle("order Deliverd".localize, for: .normal)
+        startJourneyGreenMarkImageView.isHidden  = false
+        startJourneyGrayView.isHidden = true
             orderDeliverdGreenMarkImageView.isHidden = false
             orderDeliverdGrayView.isHidden = true
             orderReceviedGrayView.isHidden = true
@@ -178,14 +203,44 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
     @IBAction func changeOrderStatusBtnDidTapped(_ sender: Any) {
         switch status {
         case "new":
-            changeOrderStatusPresenter.changeOrderStatus(status: "processing", caneclReson: "")
+            changeOrderStatusPresenter.changeOrderStatus(status: "accept", caneclReson: "")
                        // changeOrderStatusBtn.setTitle("Start Journey".localize, for: .normal)
 
             informationButton.isEnabled = false
+        case "accept":
+            changeOrderStatusPresenter.changeOrderStatus(status: "processing", caneclReson: "")
+
         case "processing":
             informationButton.isEnabled = false
+            let alert = AlertController(title: "", message: "".localize, preferredStyle: .alert)
+            
+            alert.setTitleImage(UIImage(named: "sun"))
+            let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.red]
+            let messageString = NSAttributedString(string: "order_complete".localize, attributes: messageAttributes)
+            alert.setValue(messageString, forKey: "attributedMessage")
+            
+           
+            let delvierd = UIAlertAction(title: "order Deliverd".localize, style: .default) { (action) in
+                print("deliverd")
+                let view = UIStoryboard(name: "NewOrderDetails", bundle: nil).instantiateViewController(withIdentifier: "RetrieveingOrderViewController") as! RetrieveingOrderViewController
+                view.status = "complete"
+                self.present(view, animated: true, completion: nil)
+            }
+            let cancel = UIAlertAction(title: "retrieved".localize, style: .default) { (action) in
+                print("cancel")
+                let view = UIStoryboard(name: "NewOrderDetails", bundle: nil).instantiateViewController(withIdentifier: "RetrieveingOrderViewController") as! RetrieveingOrderViewController
+                view.status = "cancel"
+                self.present(view, animated: true, completion: nil)
+            }
+             cancel.setValue(UIColor(red: 0.82, green: 0.25, blue: 0.36, alpha: 1.00)
+            , forKey: "titleTextColor")
 
-            changeOrderStatusPresenter.changeOrderStatus(status: "complete", caneclReson: "")
+            delvierd.setValue(UIColor(red: 0.82, green: 0.25, blue: 0.36, alpha: 1.00)
+            , forKey: "titleTextColor")
+            alert.addAction(delvierd)
+            alert.addAction(cancel)
+            present(alert,animated: true,completion: nil)
+//            changeOrderStatusPresenter.changeOrderStatus(status: "complete", caneclReson: "")
        
 
         default:
@@ -195,4 +250,7 @@ class NewOrderDetailsViewController: UIViewController,NewOrderDetailsProtocol,Ch
       //  changeStatusDetails(status: status!)
         
     }
+    
+    
+   
 }

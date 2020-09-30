@@ -12,36 +12,50 @@ class RetrieveingOrderViewController: UIViewController,RetrieveingOrderProtocol,
     
     
     let toastMessage = ToastMessages()
-    
+    var status = ""
     @IBOutlet weak var retrieveingOrderView: UIView!
     
     @IBOutlet weak var retrieveingOrderPopupView: UIView!
     @IBOutlet weak var retrieveingOrderTextView: UITextView!
     
     @IBOutlet weak var retrieveingReasonSentSuccufullyView: UIView!
-    
+    let messageTextViewMaxHeight: CGFloat = 170
+
     let presenter = RetrieveingOrderPresenter(retrieveingOrderModel: RetrieveingOrderModel())
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ststua\(status)")
         hideKeyboardWhenTappedAround()
+//        retrieveingOrderTextView.isHidden = false
         presenter.setVCDelegate(vcDelegate: self)
-        
-        retrieveingOrderTextView.text = "retrieveing reason".localize
+//        retrieveingOrderTextView.layer.masksToBounds = true
+//        retrieveingOrderTextView.clipsToBounds = true
+//        retrieveingOrderTextView.sizeToFit()
         retrieveingOrderTextView.textColor = UIColor.lightGray
         retrieveingOrderTextView.delegate = self
         retrieveingOrderPopupView.layer.cornerRadius = 20
         retrieveingOrderPopupView.layer.masksToBounds = true
         retrieveingOrderTextView.layer.cornerRadius = 20
-        retrieveingOrderTextView.layer.masksToBounds = false
+        retrieveingOrderTextView.layer.masksToBounds = true
         retrieveingOrderTextView.layer.shadowOpacity = 0.2
         retrieveingOrderTextView.layer.shadowOffset = CGSize(width: 3, height: 3)
         retrieveingReasonSentSuccufullyView.layer.cornerRadius = 20
         retrieveingReasonSentSuccufullyView.layer.masksToBounds = true
-        
-        
-        
+        if status == "complete" {
+            retrieveingOrderTextView.text = "complete_reason".localize
+
+        }
+        else if status == "cancel" {
+            retrieveingOrderTextView.text = "retrieveing reason".localize
+
+        }
+
+        else {
+            retrieveingOrderTextView.text = "retrieveing reason".localize
+//
+        }
         let retrieveingReasonSentSuccufullyViewGesture = UITapGestureRecognizer(target: self, action:  #selector (hideView(_:)))
         self.retrieveingReasonSentSuccufullyView.addGestureRecognizer(retrieveingReasonSentSuccufullyViewGesture)
     }
@@ -51,6 +65,7 @@ class RetrieveingOrderViewController: UIViewController,RetrieveingOrderProtocol,
         
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
+//        retrieveingOrderTextView.contentSize = UIEdgeInsets.zero
         if retrieveingOrderTextView.textColor == UIColor.lightGray {
             retrieveingOrderTextView.text = nil
             retrieveingOrderTextView.textColor = UIColor.black
@@ -62,10 +77,17 @@ class RetrieveingOrderViewController: UIViewController,RetrieveingOrderProtocol,
             retrieveingOrderTextView.textColor = UIColor.lightGray
         }
     }
+    func textViewDidChange(_ textView: UITextView) {
+     
+       }
     
+   
     @IBAction func sendRetrieveingOrderReasonBtnDidTapped(_ sender: Any) {
         if !retrieveingOrderTextView.text.isEmpty{
-            presenter.submitRetrieveingOrder(reason: retrieveingOrderTextView.text)}
+            print("ststus\(status)")
+            presenter.submitRetrieveingOrder(reason: retrieveingOrderTextView.text, status: self.status)
+            
+        }
         else{
             toastMessage.createToastMessage("you should enter retrieveing reason")
             
@@ -79,8 +101,21 @@ class RetrieveingOrderViewController: UIViewController,RetrieveingOrderProtocol,
     func displayOrderData() {
         retrieveingOrderPopupView.isHidden = true
         //     setView(view: retrieveingReasonSentSuccufullyView, hidden: true)
-        retrieveingReasonSentSuccufullyView.isHidden = false
-        
+        self.retrieveingReasonSentSuccufullyView.isHidden = false
+
+        let view = UIStoryboard(name: "NewOrderDetails", bundle: nil).instantiateViewController(withIdentifier: "NewOrderDetailsViewController") as! NewOrderDetailsViewController
+                      view.view_type = "table_view"
+
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            self.present(view, animated: true, completion: nil)
+
+        }
+
+//        performSegue(withIdentifier: "orderDetails", sender:self)
+
+       
+    
+             
         
     }
     
@@ -116,4 +151,11 @@ class RetrieveingOrderViewController: UIViewController,RetrieveingOrderProtocol,
          // do someting...
      }
     
+}
+extension UITextView {
+    func adjustUITextViewHeight() {
+        self.translatesAutoresizingMaskIntoConstraints = true
+        self.sizeToFit()
+        self.isScrollEnabled = false
+    }
 }

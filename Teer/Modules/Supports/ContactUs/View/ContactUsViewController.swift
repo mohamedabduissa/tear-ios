@@ -25,6 +25,8 @@ class ContactUsViewController: UIViewController, ContactUsVCProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
+        messageDropDown.inputView = UIView.init(frame: CGRect.zero)
+        messageDropDown.inputAccessoryView = UIView.init(frame: CGRect.zero)
         messageBody.delegate = self
         messageTitle.roundAndShodowTextField()
         messageTitle.placeholder = "message_title".localize
@@ -72,7 +74,8 @@ class ContactUsViewController: UIViewController, ContactUsVCProtocol {
     
     
     @IBAction func onBackBtnTapped(_ sender: Any) {
-        goToHomeScreen()
+//        goToHomeScreen()
+        dismiss(animated: true, completion: nil)
     }
     
     

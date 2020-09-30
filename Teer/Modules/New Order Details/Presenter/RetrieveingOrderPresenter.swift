@@ -19,8 +19,8 @@ class RetrieveingOrderPresenter{
             self.retrieveingOrderDelegate = vcDelegate
         }
         
-    func submitRetrieveingOrder(reason:String) {
-        self.retrieveingOrderModel.submitRetrieveingOrderReason(retrieveingReason:reason,completion: {error in
+    func submitRetrieveingOrder(reason:String, status: String) {
+        self.retrieveingOrderModel.submitRetrieveingOrderReason(retrieveingReason:reason, status: status,completion: {error in
                 if error == nil {
                    // print(CodeHelper.getCurrentUserToken())
                     //print("wwwww.....",order!)

@@ -22,6 +22,9 @@ class LanguageController: UIViewController {
     
     @IBOutlet weak var lb: UILabel!
     
+    @IBOutlet weak var app_language: UILabel!
+    
+    @IBOutlet weak var choose_language: UILabel!
     
     @IBOutlet weak var containerView: UIView!
     
@@ -36,7 +39,8 @@ class LanguageController: UIViewController {
             ShowAlertView.showAlert(title: "", msg: "select_language".localize, sender: self)
             return
         }
-        if text == "Arabic" {
+        print("text\(text)")
+        if text == "عربي" {
             MOLH.setLanguageTo("ar")
         }
          if text == "English" {
@@ -44,7 +48,7 @@ class LanguageController: UIViewController {
         }
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Login", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "loginScreen") as! UIViewController
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "loginScreen") as! LoginViewController
         //nextViewController.modalTransitionStyle = .flipHorizontal
         self.present(nextViewController, animated:true, completion:nil)
     }
@@ -52,7 +56,8 @@ class LanguageController: UIViewController {
     override func viewDidLoad() {
 //        chooseLanguageDropDown.inputView = UIView()
 
-       
+       chooseLanguageDropDown.inputView = UIView.init(frame: CGRect.zero)
+        chooseLanguageDropDown.inputAccessoryView = UIView.init(frame: CGRect.zero)
         flage.imageView?.contentMode = .scaleToFill
         chooseLanguageDropDown.delegate = self
         containerView.layer.cornerRadius = 10
@@ -68,6 +73,8 @@ class LanguageController: UIViewController {
         if MOLHLanguage.currentAppleLanguage() == "ar"{
             chooseLanguageDropDown.text = "عربي"
             flage.setImage(UIImage(named: "ar_flag"), for: .normal)
+            choose_language.textAlignment = .right
+            app_language.textAlignment = .right
         }
            
         else if MOLHLanguage.currentAppleLanguage() == "en"{
@@ -103,14 +110,6 @@ class LanguageController: UIViewController {
     
 }
 extension LanguageController : UITextFieldDelegate{
-   
-      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-          self.view.endEditing(true)
-          return false
-      }
-      func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
-    
-            return false
-          }
+
 
 }

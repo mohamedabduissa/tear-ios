@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MOLH
 
 class NotificationsCell: UITableViewCell, NotificationsCellProtocol {
     
@@ -25,6 +26,11 @@ class NotificationsCell: UITableViewCell, NotificationsCellProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        if MOLHLanguage.isArabic(){
+            cellBody.textAlignment = .right
+            cellDate.textAlignment = .right
+            cellDate.textAlignment = .right
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

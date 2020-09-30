@@ -16,10 +16,12 @@ class NewOrderDetailsModel {
     
     
     func getNewOrderDetails(completion: @escaping (String?, _ order:NewOrderDetailsResponse?) -> Void) {
+      
         let headers : HTTPHeaders = ["Content-Type": "application/json",
                                      "Accept": "application/json",
                                      "Authorization": "Bearer "+CodeHelper.getCurrentUserToken()]
         print("dddd\(newOrderDetailsURL)")
+        print("mmmmmm\(CodeHelper.getCurrentUserToken())")
         AF.request(newOrderDetailsURL, method: .get, parameters: nil, encoding : JSONEncoding.default, headers: headers).responseJSON { (response) in
             print("url \(self.newOrderDetailsURL)")
             if response.response?.statusCode == 200{
@@ -48,7 +50,7 @@ class NewOrderDetailsModel {
                 
                 completion(nil,orderDetails)
                 print(orderDetails)
-                CurrentOrdersResponse.save("")
+//                CurrentOrdersResponse.save("")
             }
             
             

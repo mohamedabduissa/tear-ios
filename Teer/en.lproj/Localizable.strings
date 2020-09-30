@@ -52,3 +52,7 @@
 "code_Not_match" = "code not match";
 "notifications" = "notifications";
 "about_app" = "about application";
+"order_complete" = "Has the request been delivered?";
+"complete_reason" = "type a comment";
+"retrieved" = "retrieved";
+"no_internet" = "no internet connection";

@@ -193,9 +193,12 @@ class DeliveryStatusViewController: UIViewController, DeliveryStatusProtocol, Or
         self.present(view, animated: true, completion: nil)
     }
     @IBAction func onOrderHistoryBackBtnTapped(_ sender: Any) {
-       // goToMenuScreen()
-        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
-        self.present(view, animated: true, completion: nil)
+        goToMenuScreen()
+//        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
+//        self.present(view, animated: true, completion: nil)
+        
+//        dismiss(animated: true, completion: nil)
+
     }
     func goToMenuScreen() {
         let view = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "SideMenu") as! SideMenuTableViewController
@@ -221,9 +224,8 @@ extension DeliveryStatusViewController : UITableViewDelegate,UITableViewDataSour
         let value = currentOrdersPresenter.request_number(for: indexPath.row)
         print("currnetOrder\(value)")
         CurrentOrdersResponse.save(value)
-
         let view = UIStoryboard(name: "NewOrderDetails", bundle: nil).instantiateViewController(withIdentifier: "NewOrderDetailsViewController") as! NewOrderDetailsViewController
-        
+        view.view_type = "table_view"
         DispatchQueue.main.asyncAfter(deadline: .now()+0.3) {
              self.present(view, animated: true, completion: nil)
         }
@@ -264,6 +266,7 @@ extension DeliveryStatusViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrdersHistoryCell", for: indexPath) as! OrdersHistoryCollectionViewCell
+        
         ordersHistoryPresenter.configure(cell: cell, for: indexPath.row)
 //        print("cell\(cell.orderNumber.text)")
         return cell
@@ -273,9 +276,10 @@ extension DeliveryStatusViewController: UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrdersHistoryCell", for: indexPath) as! OrdersHistoryCollectionViewCell
         
         let value = ordersHistoryPresenter.return_number(cell: cell, for: indexPath.row)
-        CurrentOrdersResponse.save("\(value)")
         print("collectionCell\(value)")
+        
         let view = UIStoryboard(name: "NewOrderDetails", bundle: nil).instantiateViewController(withIdentifier: "NewOrderDetailsViewController") as! NewOrderDetailsViewController
+        view.view_type = "collection_view"
         self.present(view, animated: true, completion: nil)
 
     }

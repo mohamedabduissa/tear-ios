@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MOLH
 
 class OrdersCell: UITableViewCell ,CurrentOrdersCellProtocol{
     func displayOrderPrice(price: Double) {
@@ -19,7 +20,14 @@ class OrdersCell: UITableViewCell ,CurrentOrdersCellProtocol{
     }
     
     func displayOrderNumber(number: Int) {
-        orderNumber.text = "#" + String(number)
+        if MOLHLanguage.isArabic(){
+            orderNumber.text = String(number) + "#"
+
+        }
+        else{
+            orderNumber.text = "#" + String(number)
+
+        }
     }
     
     

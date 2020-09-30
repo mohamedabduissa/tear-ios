@@ -61,7 +61,9 @@ class ProfileViewController: UIViewController, ProfileVCProtocol {
     }
     
     @IBAction func onBackBtnTapped(_ sender: Any) {
-        goToHomeScreen()
+//        goToHomeScreen()
+        dismiss(animated: true, completion: nil)
+
     }
     func goToHomeScreen() {
     

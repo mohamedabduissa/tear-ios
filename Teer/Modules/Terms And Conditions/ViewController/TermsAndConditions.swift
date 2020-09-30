@@ -26,8 +26,10 @@ class TermsAndConditions: UIViewController ,TermsAndConditionsProtocol{
     }
     
     @IBAction func backBtnDidTapped(_ sender: Any) {
-       let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
-        self.present(view, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+
+//       let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
+//        self.present(view, animated: true, completion: nil)
     }
     func showError(msg: String) {
         

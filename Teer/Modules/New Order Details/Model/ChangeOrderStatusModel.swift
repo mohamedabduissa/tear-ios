@@ -24,13 +24,16 @@ class ChangeOrderStatusModel {
             "cancelReson" : cancelReson
             
         ]
-
+        Indicator.sharedInstance.showIndicator()
           AF.request(changeOrderStatusURL, method: .post, parameters: parameters, encoding : JSONEncoding.default, headers: headers).responseJSON { (response) in
               print("url \(self.changeOrderStatusURL)")
               if response.response?.statusCode == 200{
                   print(response)
               }
+            Indicator.sharedInstance.hideIndicator()
+
               switch response.result{
+                
               case .failure:
                   print("faild")
                 completion("errrrrrorrr",nil)

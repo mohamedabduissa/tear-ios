@@ -141,21 +141,21 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="v82-dk-rS8">
-                                        <rect key="frame" x="19" y="28" width="24" height="24"/>
+                                        <rect key="frame" x="19" y="10" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="5Gi-BM-vOZ"/>
                                             <constraint firstAttribute="width" constant="24" id="hY0-d1-Y23"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass" translatesAutoresizingMaskIntoConstraints="NO" id="Fh7-Wx-E0W">
-                                        <rect key="frame" x="51" y="37.666666666666686" width="18" height="18"/>
+                                        <rect key="frame" x="19" y="53" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="Kdw-1y-hkR"/>
                                             <constraint firstAttribute="height" constant="18" id="OQi-2C-Jcx"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFT-a3-fSN">
-                                        <rect key="frame" x="77" y="37.666666666666686" width="231" height="40"/>
+                                        <rect key="frame" x="45" y="42" width="263" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Y33-gi-AC0"/>
                                         </constraints>
@@ -164,7 +164,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKm-it-AGK">
-                                        <rect key="frame" x="51" y="10.000000000000002" width="39.666666666666657" height="19.666666666666671"/>
+                                        <rect key="frame" x="51" y="10" width="39.666666666666657" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -172,19 +172,20 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.42352941176470588" green="0.19215686274509802" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="v82-dk-rS8" firstAttribute="top" secondItem="lKm-it-AGK" secondAttribute="top" id="6Hk-HM-dJK"/>
                                     <constraint firstItem="v82-dk-rS8" firstAttribute="leading" secondItem="SCU-R7-ghD" secondAttribute="leading" constant="19" id="Csj-g9-t77"/>
-                                    <constraint firstItem="Fh7-Wx-E0W" firstAttribute="top" secondItem="lKm-it-AGK" secondAttribute="bottom" constant="8" id="PZh-VF-Eey"/>
                                     <constraint firstItem="h81-8r-F5K" firstAttribute="trailing" secondItem="SCU-R7-ghD" secondAttribute="trailing" constant="-1" id="Ppp-Sh-4fi"/>
                                     <constraint firstAttribute="height" constant="104" id="RAO-lT-rv6">
                                         <variation key="heightClass=regular" constant="80"/>
                                     </constraint>
-                                    <constraint firstItem="eFT-a3-fSN" firstAttribute="top" secondItem="Fh7-Wx-E0W" secondAttribute="top" id="RQg-AI-a4c"/>
+                                    <constraint firstItem="eFT-a3-fSN" firstAttribute="top" secondItem="lKm-it-AGK" secondAttribute="bottom" constant="8" id="RQg-AI-a4c"/>
                                     <constraint firstItem="lKm-it-AGK" firstAttribute="top" secondItem="SCU-R7-ghD" secondAttribute="top" constant="10" id="TI7-9B-L7j"/>
-                                    <constraint firstItem="Fh7-Wx-E0W" firstAttribute="leading" secondItem="lKm-it-AGK" secondAttribute="leading" id="Wcu-E5-ybB"/>
-                                    <constraint firstItem="v82-dk-rS8" firstAttribute="centerY" secondItem="SCU-R7-ghD" secondAttribute="centerY" id="faY-Xh-Pkq"/>
+                                    <constraint firstItem="v82-dk-rS8" firstAttribute="centerY" secondItem="lKm-it-AGK" secondAttribute="centerY" id="g0l-MW-oDs"/>
                                     <constraint firstItem="eFT-a3-fSN" firstAttribute="leading" secondItem="Fh7-Wx-E0W" secondAttribute="trailing" constant="8" id="nMw-dT-fmC"/>
+                                    <constraint firstItem="Fh7-Wx-E0W" firstAttribute="leading" secondItem="v82-dk-rS8" secondAttribute="leading" id="nbA-Sr-ofe"/>
                                     <constraint firstItem="h81-8r-F5K" firstAttribute="leading" secondItem="eFT-a3-fSN" secondAttribute="trailing" constant="5" id="oSy-hR-kb0"/>
                                     <constraint firstItem="lKm-it-AGK" firstAttribute="leading" secondItem="v82-dk-rS8" secondAttribute="trailing" constant="8" id="ryu-LY-gAl"/>
+                                    <constraint firstItem="Fh7-Wx-E0W" firstAttribute="centerY" secondItem="eFT-a3-fSN" secondAttribute="centerY" id="tgr-Te-K3f"/>
                                     <constraint firstItem="h81-8r-F5K" firstAttribute="top" secondItem="SCU-R7-ghD" secondAttribute="top" id="yEt-p4-0Ss"/>
                                 </constraints>
                             </view>
@@ -384,6 +385,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BtJ-sc-Vas"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ypS-vh-mM8"/>
                     <connections>
                         <outlet property="backButton" destination="pWD-GR-Bdc" id="ZWA-eS-u0i"/>
                         <outlet property="callView" destination="h81-8r-F5K" id="4FA-70-Hep"/>
@@ -437,8 +439,27 @@
                                         <rect key="frame" x="19" y="157" width="336" height="170"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="170" id="uEY-dS-o9Q"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="170" id="aac-Yp-1wI"/>
                                         </constraints>
+                                        <mutableString key="text">s
+how to make UITextView height dynamic according ...
+21 answers
+Nov 25, 2016
+how to set textview height dynamically using ...
+3 answers
+Sep 20, 2018
+Get UITextView dynamic height with auto layout ...
+13 answers
+Mar 23, 2016
+How do I size a UITextView to its content? - Stack ...
+39 answers
+Nov 11, 2011
+More results from stackoverflow.com
+
+Get UITextView dynamic height with auto layout after setting textstackoverflow.com › questions › get-uitextview-dynami...
+Mar 24, 2016 - This should work: NSLog(@"text before: %.2f",self.myText.frame.size.height); [self .myText setText:self.string]; [self.myText layoutIfNeeded]; ...
+13 answers
+</mutableString>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -484,6 +505,7 @@
                                     <constraint firstItem="Xzi-h9-hmb" firstAttribute="centerX" secondItem="0rK-tG-dJs" secondAttribute="centerX" id="aKd-2j-D5s"/>
                                     <constraint firstItem="0rK-tG-dJs" firstAttribute="centerX" secondItem="bfV-9r-v77" secondAttribute="centerX" id="biE-II-cMf"/>
                                     <constraint firstItem="0rK-tG-dJs" firstAttribute="top" secondItem="ryr-Dx-NWh" secondAttribute="bottom" constant="20" id="gSD-h7-ah2"/>
+                                    <constraint firstItem="iD3-lW-ipE" firstAttribute="leading" secondItem="bfV-9r-v77" secondAttribute="leading" constant="19" id="ndO-Ot-pRr"/>
                                     <constraint firstAttribute="trailing" secondItem="iD3-lW-ipE" secondAttribute="trailing" constant="19" id="vNx-w6-63w"/>
                                     <constraint firstAttribute="trailing" secondItem="akj-Vc-m1n" secondAttribute="trailing" constant="30" id="yET-q2-cGH"/>
                                 </constraints>

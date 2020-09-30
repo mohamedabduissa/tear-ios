@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MOLH
 class OrdersHistoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var orderNumber: UILabel!
     @IBOutlet weak var name: UILabel!
@@ -25,6 +25,7 @@ class OrdersHistoryCollectionViewCell: UICollectionViewCell {
     
     func setupCell(){
         //self.contentView.layer.borderColor = UIColor.gray.cgColor
+        address.sizeToFit()
         self.contentView.layer.masksToBounds = false
         self.contentView.layer.cornerRadius = 10.0
         self.contentView.layer.borderWidth = 0.1
@@ -37,6 +38,13 @@ class OrdersHistoryCollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         self.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        if MOLHLanguage.isArabic() {
+            address.textAlignment = .right
+            name.textAlignment = .right
+            orderCost.textAlignment = .right
+            orderStatus.textAlignment = .right
+
+        }
     }
     
 }

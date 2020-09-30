@@ -41,7 +41,6 @@ class NotificationsTableVC: UIViewController {
         self.notificationsTable.rowHeight = 120.0
         dataSource.delegate = self as! DRHTableviewDataModelDelegate
         dataSource.getNotifications()
-        print("token\(UserDefaults.standard.string(forKey:"userToken"))")
         DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
             //self.hideActivityIndicator()
           //  self.displayNotificationsData()
@@ -57,10 +56,12 @@ class NotificationsTableVC: UIViewController {
     
     
     @IBAction func onBackBtnTapped(_ sender: Any) {
-        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
-        self.present(view, animated: true, completion: nil)
-    }
+//        let view = UIStoryboard(name: "DeliveryStatus", bundle: nil).instantiateViewController(withIdentifier: "Home") as! DeliveryStatusViewController
+//        self.present(view, animated: true, completion: nil)
+//    }
     
+        dismiss(animated: true, completion: nil)
+    }
     override func viewWillAppear(_ animated: Bool) {
      //   notificatiosPresenter.getNotifications()
        // displayNotificationsData()

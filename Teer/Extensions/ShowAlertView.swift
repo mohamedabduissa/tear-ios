@@ -14,7 +14,6 @@ class ShowAlertView {
     class func showAlert (title: String , msg: String , sender: UIViewController){
         let alert = AlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
 //        alert.setTitleImage(UIImage(named: "infoormation"))
-//        alert.view.translatesAutoresizingMaskIntoConstraints = false
 //
 //        alert.view.heightAnchor.constraint(equalToConstant: 250).isActive = true
         sender.present(alert, animated: true, completion: nil)
